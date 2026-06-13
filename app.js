@@ -87,6 +87,7 @@ const siteHeader = document.getElementById("site-header");
 const searchToggle = document.getElementById("search-toggle");
 const detailPane = document.getElementById("detail-pane");
 const detailClose = document.getElementById("detail-close");
+const detailBackdrop = document.getElementById("detail-backdrop");
 
 let selectedKanji = null;
 
@@ -295,8 +296,15 @@ searchInput.addEventListener("input", e => {
   searchTimer = setTimeout(() => runSearch(e.target.value.trim()), 80);
 });
 
-// Mobile: toggle the search field open/closed
+// Mobile: toggle the search field open/closed.
+// Tapping search while the detail sheet is open dismisses the sheet first.
 searchToggle.addEventListener("click", () => {
+  if (detailPane.classList.contains("is-open")) {
+    closeDetail();
+    openSearchBar();
+    searchInput.focus();
+    return;
+  }
   if (siteHeader.classList.contains("search-open")) {
     collapseSearchBar();
   } else {
@@ -304,6 +312,9 @@ searchToggle.addEventListener("click", () => {
     searchInput.focus();
   }
 });
+
+// Tapping the dimmed area outside the sheet dismisses it
+detailBackdrop.addEventListener("click", closeDetail);
 
 // Auto-collapse the search field when it loses focus while empty
 searchInput.addEventListener("blur", () => {

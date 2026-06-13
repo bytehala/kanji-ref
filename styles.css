@@ -328,6 +328,16 @@ body {
   min-height: 400px;
 }
 
+/* Dim scrim behind the mobile detail sheet; tapping it dismisses */
+.detail-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  background: rgba(28, 26, 23, 0.4);
+  animation: fadeIn 0.2s ease-out;
+}
+
 /* Close button — overlay only (mobile) */
 .detail-close {
   display: none;
@@ -356,29 +366,48 @@ body {
 }
 
 @media (max-width: 900px) {
-  /* Detail lives off-screen until a kanji is selected, then takes over
-     as a full-screen overlay above the results list. */
+  /* Detail lives off-screen until a kanji is selected, then opens as a
+     bottom sheet above a dimmed list. The header stays on top so its
+     search icon remains tappable — tapping it dismisses the sheet. */
   .detail-pane {
     display: none;
   }
   .detail-pane.is-open {
     display: block;
     position: fixed;
-    inset: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 100;
     background: var(--paper);
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 0 -10px 40px rgba(28, 26, 23, 0.22);
+    animation: slideUp 0.28s ease-out;
+  }
+  .detail-pane.is-open .detail-content {
+    max-height: 85vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding: 1.5rem 1rem 2.5rem;
-    animation: slideUp 0.28s ease-out;
+    border-radius: inherit;
   }
   .detail-pane.is-open .detail-placeholder {
     display: none;
   }
   .detail-pane.is-open .detail-close {
     display: inline-flex;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
   }
-  /* Prevent the list behind the overlay from scrolling */
+  /* Show the scrim and lift the header above both scrim and sheet */
+  body.detail-open .detail-backdrop {
+    display: block;
+  }
+  body.detail-open .site-header {
+    z-index: 200;
+  }
+  /* Prevent the list behind the sheet from scrolling */
   body.detail-open {
     overflow: hidden;
   }
