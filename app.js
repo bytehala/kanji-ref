@@ -1,6 +1,6 @@
 // Kanji Reference — IndexedDB-backed search over a JSON seed.
 
-const DATA_VERSION = 2; // bump when kanji.json shape changes; clears + reseeds
+const DATA_VERSION = 3; // bump when kanji.json shape changes; clears + reseeds
 const DB_NAME = "kanji-db";
 
 const db = new Dexie(DB_NAME);
@@ -180,16 +180,20 @@ function collapseSearchBar() {
 
 // ---------- Reading helpers ----------
 
-// The kana to display for an expression: its full kana minus any okurigana,
-// which is already visible in the expression text itself (投げる → な). Romaji
-// stays in the data for search but is no longer shown.
-function expressionReading(e) {
-  const kana = e.kana || "";
-  const oku = e.okurigana;
-  if (oku && kana.endsWith(oku)) {
-    return kana.slice(0, kana.length - oku.length);
+// Build ruby HTML for an expression. Each `breakdown` segment's reading floats
+// above only its own character(s) (料 → りょう, 理 → り); kana-only segments
+// (no reading) render plain. Falls back to the full kana over the whole word
+// when no breakdown is present. Returns escaped HTML — do not re-escape.
+function renderExpressionRuby(e) {
+  const seg = (text, reading) =>
+    reading
+      ? `<ruby>${escapeHtml(text)}<rt>${escapeHtml(reading)}</rt></ruby>`
+      : escapeHtml(text);
+
+  if (Array.isArray(e.breakdown) && e.breakdown.length) {
+    return e.breakdown.map(s => seg(s.text, s.reading)).join("");
   }
-  return kana;
+  return seg(e.expression, e.kana || "");
 }
 
 function renderDetail(entry, familyResolved) {
@@ -211,18 +215,12 @@ function renderDetail(entry, familyResolved) {
       ${expressions.length === 0
         ? `<p class="empty-section">No expressions recorded.</p>`
         : `<ul class="expression-list">
-            ${expressions.map(e => {
-              const kana = expressionReading(e);
-              return `
+            ${expressions.map(e => `
               <li class="expression-item">
-                <div class="expression-glyph">
-                  <span class="expression-kana">${escapeHtml(kana)}</span>
-                  <span class="expression-text">${escapeHtml(e.expression)}</span>
-                </div>
+                <div class="expression-text">${renderExpressionRuby(e)}</div>
                 <div class="expression-meaning">${escapeHtml(e.meaning || "")}</div>
               </li>
-            `;
-            }).join("")}
+            `).join("")}
           </ul>`
       }
     </section>

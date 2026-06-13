@@ -9,9 +9,12 @@
       { "component": "民", "meaning": "people (phonetic, gives ねむ reading)" }
     ],
     "expressions": [
-      { "expression": "眠い", "kana": "ねむい", "romaji": "nemui", "okurigana": "い", "meaning": "sleepy" },
-      { "expression": "眠る", "kana": "ねむる", "romaji": "nemuru", "okurigana": "る", "meaning": "to sleep" },
-      { "expression": "睡眠", "kana": "すいみん", "romaji": "suimin", "meaning": "sleep (noun)" }
+      { "expression": "眠い", "kana": "ねむい", "romaji": "nemui", "meaning": "sleepy",
+        "breakdown": [{ "text": "眠", "reading": "ねむ" }, { "text": "い" }] },
+      { "expression": "眠る", "kana": "ねむる", "romaji": "nemuru", "meaning": "to sleep",
+        "breakdown": [{ "text": "眠", "reading": "ねむ" }, { "text": "る" }] },
+      { "expression": "睡眠", "kana": "すいみん", "romaji": "suimin", "meaning": "sleep (noun)",
+        "breakdown": [{ "text": "睡", "reading": "すい" }, { "text": "眠", "reading": "みん" }] }
     ],
     "family": [
       { "kanji": "寝", "type": "related" }
@@ -29,8 +32,10 @@
       { "component": "又", "meaning": "hand, again" }
     ],
     "expressions": [
-      { "expression": "寝る", "kana": "ねる", "romaji": "neru", "okurigana": "る", "meaning": "to sleep, lie down" },
-      { "expression": "寝室", "kana": "しんしつ", "romaji": "shinshitsu", "meaning": "bedroom" }
+      { "expression": "寝る", "kana": "ねる", "romaji": "neru", "meaning": "to sleep, lie down",
+        "breakdown": [{ "text": "寝", "reading": "ね" }, { "text": "る" }] },
+      { "expression": "寝室", "kana": "しんしつ", "romaji": "shinshitsu", "meaning": "bedroom",
+        "breakdown": [{ "text": "寝", "reading": "しん" }, { "text": "室", "reading": "しつ" }] }
     ],
     "family": [
       { "kanji": "眠", "type": "related" }
@@ -46,9 +51,12 @@
       { "component": "月", "meaning": "moon" }
     ],
     "expressions": [
-      { "expression": "朝", "kana": "あさ", "romaji": "asa", "meaning": "morning" },
-      { "expression": "朝食", "kana": "ちょうしょく", "romaji": "choushoku", "meaning": "breakfast" },
-      { "expression": "今朝", "kana": "けさ", "romaji": "kesa", "meaning": "this morning" }
+      { "expression": "朝", "kana": "あさ", "romaji": "asa", "meaning": "morning",
+        "breakdown": [{ "text": "朝", "reading": "あさ" }] },
+      { "expression": "朝食", "kana": "ちょうしょく", "romaji": "choushoku", "meaning": "breakfast",
+        "breakdown": [{ "text": "朝", "reading": "ちょう" }, { "text": "食", "reading": "しょく" }] },
+      { "expression": "今朝", "kana": "けさ", "romaji": "kesa", "meaning": "this morning",
+        "breakdown": [{ "text": "今朝", "reading": "けさ" }] }
     ],
     "family": []
   },
@@ -62,9 +70,12 @@
       { "component": "斗", "meaning": "dipper, measuring scoop" }
     ],
     "expressions": [
-      { "expression": "料理", "kana": "りょうり", "romaji": "ryouri", "meaning": "cooking, cuisine" },
-      { "expression": "料金", "kana": "りょうきん", "romaji": "ryoukin", "meaning": "fee, charge" },
-      { "expression": "材料", "kana": "ざいりょう", "romaji": "zairyou", "meaning": "material, ingredients" }
+      { "expression": "料理", "kana": "りょうり", "romaji": "ryouri", "meaning": "cooking, cuisine",
+        "breakdown": [{ "text": "料", "reading": "りょう" }, { "text": "理", "reading": "り" }] },
+      { "expression": "料金", "kana": "りょうきん", "romaji": "ryoukin", "meaning": "fee, charge",
+        "breakdown": [{ "text": "料", "reading": "りょう" }, { "text": "金", "reading": "きん" }] },
+      { "expression": "材料", "kana": "ざいりょう", "romaji": "zairyou", "meaning": "material, ingredients",
+        "breakdown": [{ "text": "材", "reading": "ざい" }, { "text": "料", "reading": "りょう" }] }
     ],
     "family": []
   },
@@ -78,9 +89,12 @@
       { "component": "里", "meaning": "village" }
     ],
     "expressions": [
-      { "expression": "料理", "kana": "りょうり", "romaji": "ryouri", "meaning": "cooking" },
-      { "expression": "理由", "kana": "りゆう", "romaji": "riyuu", "meaning": "reason" },
-      { "expression": "理解", "kana": "りかい", "romaji": "rikai", "meaning": "understanding" }
+      { "expression": "料理", "kana": "りょうり", "romaji": "ryouri", "meaning": "cooking",
+        "breakdown": [{ "text": "料", "reading": "りょう" }, { "text": "理", "reading": "り" }] },
+      { "expression": "理由", "kana": "りゆう", "romaji": "riyuu", "meaning": "reason",
+        "breakdown": [{ "text": "理", "reading": "り" }, { "text": "由", "reading": "ゆう" }] },
+      { "expression": "理解", "kana": "りかい", "romaji": "rikai", "meaning": "understanding",
+        "breakdown": [{ "text": "理", "reading": "り" }, { "text": "解", "reading": "かい" }] }
     ],
     "family": []
   },
@@ -94,8 +108,10 @@
       { "component": "土", "meaning": "earth, soil" }
     ],
     "expressions": [
-      { "expression": "里", "kana": "さと", "romaji": "sato", "meaning": "village, hometown" },
-      { "expression": "里山", "kana": "さとやま", "romaji": "satoyama", "meaning": "village woodland" }
+      { "expression": "里", "kana": "さと", "romaji": "sato", "meaning": "village, hometown",
+        "breakdown": [{ "text": "里", "reading": "さと" }] },
+      { "expression": "里山", "kana": "さとやま", "romaji": "satoyama", "meaning": "village woodland",
+        "breakdown": [{ "text": "里", "reading": "さと" }, { "text": "山", "reading": "やま" }] }
     ],
     "family": []
   },
@@ -109,8 +125,10 @@
       { "component": "夅", "meaning": "(unofficial) feet stepping downward" }
     ],
     "expressions": [
-      { "expression": "降る", "kana": "ふる", "romaji": "furu", "okurigana": "る", "meaning": "to fall (rain, snow)" },
-      { "expression": "降りる", "kana": "おりる", "romaji": "oriru", "okurigana": "りる", "meaning": "to get off, descend" }
+      { "expression": "降る", "kana": "ふる", "romaji": "furu", "meaning": "to fall (rain, snow)",
+        "breakdown": [{ "text": "降", "reading": "ふ" }, { "text": "る" }] },
+      { "expression": "降りる", "kana": "おりる", "romaji": "oriru", "meaning": "to get off, descend",
+        "breakdown": [{ "text": "降", "reading": "お" }, { "text": "りる" }] }
     ],
     "family": []
   },
@@ -121,8 +139,10 @@
     "romaji": "sen",
     "components": [],
     "expressions": [
-      { "expression": "千", "kana": "せん", "romaji": "sen", "meaning": "thousand" },
-      { "expression": "千葉", "kana": "ちば", "romaji": "chiba", "meaning": "Chiba (place name; 千 read as ち, go-on reading)" }
+      { "expression": "千", "kana": "せん", "romaji": "sen", "meaning": "thousand",
+        "breakdown": [{ "text": "千", "reading": "せん" }] },
+      { "expression": "千葉", "kana": "ちば", "romaji": "chiba", "meaning": "Chiba (place name; 千 read as ち, go-on reading)",
+        "breakdown": [{ "text": "千", "reading": "ち" }, { "text": "葉", "reading": "ば" }] }
     ],
     "family": []
   },
@@ -135,8 +155,10 @@
       { "component": "北", "meaning": "(unofficial) two people back-to-back" }
     ],
     "expressions": [
-      { "expression": "北", "kana": "きた", "romaji": "kita", "meaning": "north" },
-      { "expression": "北海道", "kana": "ほっかいどう", "romaji": "hokkaidou", "meaning": "Hokkaido" }
+      { "expression": "北", "kana": "きた", "romaji": "kita", "meaning": "north",
+        "breakdown": [{ "text": "北", "reading": "きた" }] },
+      { "expression": "北海道", "kana": "ほっかいどう", "romaji": "hokkaidou", "meaning": "Hokkaido",
+        "breakdown": [{ "text": "北", "reading": "ほっ" }, { "text": "海", "reading": "かい" }, { "text": "道", "reading": "どう" }] }
     ],
     "family": [
       { "kanji": "南", "type": "cardinal direction" },
@@ -151,7 +173,8 @@
     "romaji": "minami",
     "components": [],
     "expressions": [
-      { "expression": "南", "kana": "みなみ", "romaji": "minami", "meaning": "south" }
+      { "expression": "南", "kana": "みなみ", "romaji": "minami", "meaning": "south",
+        "breakdown": [{ "text": "南", "reading": "みなみ" }] }
     ],
     "family": [
       { "kanji": "北", "type": "cardinal direction" },
@@ -166,8 +189,10 @@
     "romaji": "higashi",
     "components": [],
     "expressions": [
-      { "expression": "東", "kana": "ひがし", "romaji": "higashi", "meaning": "east" },
-      { "expression": "東京", "kana": "とうきょう", "romaji": "toukyou", "meaning": "Tokyo" }
+      { "expression": "東", "kana": "ひがし", "romaji": "higashi", "meaning": "east",
+        "breakdown": [{ "text": "東", "reading": "ひがし" }] },
+      { "expression": "東京", "kana": "とうきょう", "romaji": "toukyou", "meaning": "Tokyo",
+        "breakdown": [{ "text": "東", "reading": "とう" }, { "text": "京", "reading": "きょう" }] }
     ],
     "family": [
       { "kanji": "北", "type": "cardinal direction" },
@@ -182,7 +207,8 @@
     "romaji": "nishi",
     "components": [],
     "expressions": [
-      { "expression": "西", "kana": "にし", "romaji": "nishi", "meaning": "west" }
+      { "expression": "西", "kana": "にし", "romaji": "nishi", "meaning": "west",
+        "breakdown": [{ "text": "西", "reading": "にし" }] }
     ],
     "family": [
       { "kanji": "北", "type": "cardinal direction" },
@@ -200,7 +226,8 @@
       { "component": "殳", "meaning": "weapon, action with hand" }
     ],
     "expressions": [
-      { "expression": "投げる", "kana": "なげる", "romaji": "nageru", "okurigana": "げる", "meaning": "to throw" }
+      { "expression": "投げる", "kana": "なげる", "romaji": "nageru", "meaning": "to throw",
+        "breakdown": [{ "text": "投", "reading": "な" }, { "text": "げる" }] }
     ],
     "family": [
       { "kanji": "拾", "type": "opposite" }
@@ -216,7 +243,8 @@
       { "component": "合", "meaning": "fit together (phonetic)" }
     ],
     "expressions": [
-      { "expression": "拾う", "kana": "ひろう", "romaji": "hirou", "okurigana": "う", "meaning": "to pick up" }
+      { "expression": "拾う", "kana": "ひろう", "romaji": "hirou", "meaning": "to pick up",
+        "breakdown": [{ "text": "拾", "reading": "ひろ" }, { "text": "う" }] }
     ],
     "family": [
       { "kanji": "投", "type": "opposite" }

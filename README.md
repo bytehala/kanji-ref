@@ -14,7 +14,15 @@ A personal kanji study app. Source of truth is `kanji.json`; on first load, the 
     { "component": "string", "meaning": "string" }
   ],
   "expressions": [
-    { "expression": "string", "kana": "string (full reading)", "romaji": "string (full reading)", "okurigana": "string (optional)", "meaning": "string" }
+    {
+      "expression": "string",
+      "kana": "string (full reading — for search)",
+      "romaji": "string (full reading — for search)",
+      "meaning": "string",
+      "breakdown": [
+        { "text": "string (character(s))", "reading": "string (kana shown above; omit for kana segments)" }
+      ]
+    }
   ],
   "family": [
     { "kanji": "string (single character — references another entry)", "type": "string (free-text, e.g. 'opposite', 'cardinal direction')" }
@@ -25,7 +33,7 @@ A personal kanji study app. Source of truth is `kanji.json`; on first load, the 
 ### Notes
 
 - **Components** can be any character — radical, partial element, or full kanji. Unofficial elements are labeled `(unofficial) <description>`.
-- **Expressions** store the full reading in `kana`/`romaji` (used for search). The optional `okurigana` field names the trailing kana already written in the expression (e.g. `投げる` → `"げる"`); the app strips it from the displayed reading so only the kanji's reading is shown above the word (`投げる` → `な` / `na`). Omit `okurigana` for all-kanji compounds like `睡眠`, where the whole reading belongs to the kanji.
+- **Expressions** keep the full reading in `kana`/`romaji` for search; the `breakdown` array drives display. It splits the expression into segments, each with the literal `text` and an optional `reading`. Segments **with** a `reading` render as furigana (kana) above just that text; segments **without** one (okurigana) render plain at the baseline. This keeps every reading over its own kanji — `料理` shows りょう over 料 and り over 理, not りょうり spanning both. A segment's `text` can hold multiple characters for whole-word readings: `今朝` → `[{ "text": "今朝", "reading": "けさ" }]`, and `召し上がる` → `[{ "text": "召", "reading": "め" }, { "text": "し" }, { "text": "上", "reading": "あ" }, { "text": "がる" }]`. The concatenated `text` must equal `expression`, and the concatenated readings must equal `kana`.
 - **Family** entries reference other kanji by their character. The app resolves the meaning at display time from the linked entry. If a referenced entry doesn't exist yet, the family member is shown with a `(not yet in database)` placeholder.
 
 ## Searchable fields
@@ -91,9 +99,12 @@ Edit `kanji.json` and bump `DATA_VERSION` in `app.js` (top of file). On next pag
     { "component": "民", "meaning": "people (phonetic, gives ねむ reading)" }
   ],
   "expressions": [
-    { "expression": "眠い", "kana": "ねむい", "romaji": "nemui", "okurigana": "い", "meaning": "sleepy" },
-    { "expression": "眠る", "kana": "ねむる", "romaji": "nemuru", "okurigana": "る", "meaning": "to sleep" },
-    { "expression": "睡眠", "kana": "すいみん", "romaji": "suimin", "meaning": "sleep (noun)" }
+    { "expression": "眠い", "kana": "ねむい", "romaji": "nemui", "meaning": "sleepy",
+      "breakdown": [{ "text": "眠", "reading": "ねむ" }, { "text": "い" }] },
+    { "expression": "眠る", "kana": "ねむる", "romaji": "nemuru", "meaning": "to sleep",
+      "breakdown": [{ "text": "眠", "reading": "ねむ" }, { "text": "る" }] },
+    { "expression": "睡眠", "kana": "すいみん", "romaji": "suimin", "meaning": "sleep (noun)",
+      "breakdown": [{ "text": "睡", "reading": "すい" }, { "text": "眠", "reading": "みん" }] }
   ],
   "family": [
     { "kanji": "寝", "type": "related" }
