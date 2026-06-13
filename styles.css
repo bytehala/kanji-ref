@@ -70,11 +70,57 @@ body {
   flex-wrap: wrap;
 }
 
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 @media (max-width: 640px) {
   .header-inner {
     gap: 0.75rem;
     flex-direction: column;
     align-items: stretch;
+  }
+  .header-top {
+    justify-content: space-between;
+  }
+}
+
+/* Search toggle — mobile only */
+.search-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: none;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.search-toggle:hover,
+.search-toggle:focus-visible {
+  border-color: var(--vermillion);
+  color: var(--vermillion);
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  .search-toggle {
+    display: inline-flex;
+  }
+  /* Collapsed by default; the entry count stays visible, the input hides */
+  .search-input {
+    display: none;
+  }
+  .site-header.search-open .search-input {
+    display: block;
   }
 }
 
@@ -282,10 +328,65 @@ body {
   min-height: 400px;
 }
 
+/* Close button — overlay only (mobile) */
+.detail-close {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 101;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--paper-soft);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.detail-close:hover,
+.detail-close:focus-visible {
+  border-color: var(--vermillion);
+  color: var(--vermillion);
+  outline: none;
+}
+
 @media (max-width: 900px) {
+  /* Detail lives off-screen until a kanji is selected, then takes over
+     as a full-screen overlay above the results list. */
   .detail-pane {
-    position: static;
+    display: none;
   }
+  .detail-pane.is-open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: var(--paper);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1.5rem 1rem 2.5rem;
+    animation: slideUp 0.28s ease-out;
+  }
+  .detail-pane.is-open .detail-placeholder {
+    display: none;
+  }
+  .detail-pane.is-open .detail-close {
+    display: inline-flex;
+  }
+  /* Prevent the list behind the overlay from scrolling */
+  body.detail-open {
+    overflow: hidden;
+  }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(1.5rem); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .detail-placeholder {

@@ -83,6 +83,10 @@ const detailPlaceholder = document.getElementById("detail-placeholder");
 const detailContent = document.getElementById("detail-content");
 const searchInput = document.getElementById("search");
 const searchMeta = document.getElementById("search-meta");
+const siteHeader = document.getElementById("site-header");
+const searchToggle = document.getElementById("search-toggle");
+const detailPane = document.getElementById("detail-pane");
+const detailClose = document.getElementById("detail-close");
 
 let selectedKanji = null;
 
@@ -142,13 +146,34 @@ async function selectKanji(kanji) {
   );
 
   renderDetail(entry, familyResolved);
+  openDetail();
+}
 
-  // On mobile (single-column layout), scroll the detail into view
-  if (window.matchMedia("(max-width: 900px)").matches) {
-    requestAnimationFrame(() => {
-      detailContent.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  }
+// ---------- Mobile detail overlay ----------
+
+// On mobile (≤900px), the detail pane is a full-screen overlay above the list.
+// The `is-open` class is a no-op on desktop, where the pane is a static column.
+function openDetail() {
+  detailPane.classList.add("is-open");
+  document.body.classList.add("detail-open");
+  detailPane.scrollTop = 0;
+}
+
+function closeDetail() {
+  detailPane.classList.remove("is-open");
+  document.body.classList.remove("detail-open");
+}
+
+// ---------- Mobile search toggle ----------
+
+function openSearchBar() {
+  siteHeader.classList.add("search-open");
+  searchToggle.setAttribute("aria-expanded", "true");
+}
+
+function collapseSearchBar() {
+  siteHeader.classList.remove("search-open");
+  searchToggle.setAttribute("aria-expanded", "false");
 }
 
 function renderDetail(entry, familyResolved) {
@@ -225,22 +250,24 @@ function renderDetail(entry, familyResolved) {
     </section>
   `;
 
-  // Wire up component clicks → search by that component
+  // Wire up component clicks → search by that component.
+  // On mobile, close the overlay and reveal the query so results are visible.
   detailContent.querySelectorAll(".component-item").forEach(el => {
     el.addEventListener("click", () => {
       const q = el.dataset.search;
       searchInput.value = q;
+      closeDetail();
+      openSearchBar();
       runSearch(q);
     });
   });
 
-  // Wire up family clicks → navigate to that kanji (if exists)
+  // Wire up family clicks → navigate to that kanji (if exists).
+  // selectKanji re-renders the detail and scrolls the overlay back to top.
   detailContent.querySelectorAll(".family-item").forEach(el => {
     if (el.dataset.missing === "true") return;
     el.addEventListener("click", () => {
       selectKanji(el.dataset.kanji);
-      // Scroll detail pane to top
-      detailContent.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 }
@@ -266,6 +293,35 @@ let searchTimer;
 searchInput.addEventListener("input", e => {
   clearTimeout(searchTimer);
   searchTimer = setTimeout(() => runSearch(e.target.value.trim()), 80);
+});
+
+// Mobile: toggle the search field open/closed
+searchToggle.addEventListener("click", () => {
+  if (siteHeader.classList.contains("search-open")) {
+    collapseSearchBar();
+  } else {
+    openSearchBar();
+    searchInput.focus();
+  }
+});
+
+// Auto-collapse the search field when it loses focus while empty
+searchInput.addEventListener("blur", () => {
+  if (!searchInput.value.trim()) collapseSearchBar();
+});
+
+// Close the detail overlay
+detailClose.addEventListener("click", closeDetail);
+
+// Escape: close the overlay first, otherwise collapse the search field
+document.addEventListener("keydown", e => {
+  if (e.key !== "Escape") return;
+  if (detailPane.classList.contains("is-open")) {
+    closeDetail();
+  } else if (siteHeader.classList.contains("search-open")) {
+    collapseSearchBar();
+    searchInput.blur();
+  }
 });
 
 // ---------- Init ----------
