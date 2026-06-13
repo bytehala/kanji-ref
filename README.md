@@ -73,14 +73,24 @@ No build step needed — Dexie is loaded from CDN, everything else is static.
 
 Edit `kanji.json` and bump `DATA_VERSION` in `app.js` (top of file). On next page load, the app clears the local DB and re-seeds from the updated JSON.
 
+After editing, run the data tests — they catch the silent ways the data can drift:
+
+```sh
+npm test
+```
+
+This checks (in `test/data.test.mjs`, no dependencies — just Node's built-in runner) that every expression's `breakdown` still reconstructs both its `expression` and its `kana`, and that every `romaji` matches its `kana`. A mismatch would otherwise render furigana or search results wrongly without throwing.
+
 ## File layout
 
 ```
 .
-├── index.html      # Page structure
-├── styles.css      # Editorial paper-and-ink styling
-├── app.js          # Dexie setup, search, render
-├── kanji.json      # Source of truth
+├── index.html             # Page structure
+├── styles.css             # Editorial paper-and-ink styling
+├── app.js                 # Dexie setup, search, render
+├── kanji.json             # Source of truth
+├── package.json           # npm test script (no runtime deps)
+├── test/data.test.mjs     # Data integrity tests
 └── README.md
 ```
 

@@ -1,0 +1,9 @@
+{
+  "name": "kanji-ref",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal kanji study app — static, client-side.",
+  "scripts": {
+    "test": "node --test"
+  }
+}
