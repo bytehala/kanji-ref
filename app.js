@@ -109,12 +109,12 @@ function renderResults(entries) {
     li.dataset.kanji = entry.kanji;
 
     li.innerHTML = `
-      <div class="result-kanji">${escapeHtml(entry.kanji)}</div>
-      <div class="result-meta">
-        <div class="result-reading">${escapeHtml(entry.kana || "")}</div>
-        <div class="result-romaji">${escapeHtml(entry.romaji || "")}</div>
-        <div class="result-meaning">${escapeHtml(entry.meaning || "")}</div>
+      <div class="result-glyph">
+        <span class="result-reading">${escapeHtml(entry.kana || "")}</span>
+        <span class="result-romaji">${escapeHtml(entry.romaji || "")}</span>
+        <span class="result-kanji">${escapeHtml(entry.kanji)}</span>
       </div>
+      <div class="result-meaning">${escapeHtml(entry.meaning || "")}</div>
     `;
 
     li.addEventListener("click", () => selectKanji(entry.kanji));
@@ -142,6 +142,7 @@ async function selectKanji(kanji) {
         type: f.type || "",
         meaning: linked?.meaning || null,
         kana: linked?.kana || null,
+        romaji: linked?.romaji || null,
       };
     })
   );
@@ -186,14 +187,10 @@ function renderDetail(entry, familyResolved) {
 
   detailContent.innerHTML = `
     <header class="detail-header">
+      <span class="detail-kana">${escapeHtml(entry.kana || "")}</span>
+      <span class="detail-romaji">${escapeHtml(entry.romaji || "")}</span>
       <div class="detail-kanji">${escapeHtml(entry.kanji)}</div>
-      <div class="detail-meta">
-        <div class="detail-readings">
-          <span class="detail-kana">${escapeHtml(entry.kana || "")}</span>
-          <span class="detail-romaji">${escapeHtml(entry.romaji || "")}</span>
-        </div>
-        <div class="detail-meaning">${escapeHtml(entry.meaning || "")}</div>
-      </div>
+      <div class="detail-meaning">${escapeHtml(entry.meaning || "")}</div>
     </header>
 
     <section class="detail-section">
@@ -218,10 +215,10 @@ function renderDetail(entry, familyResolved) {
         : `<ul class="expression-list">
             ${expressions.map(e => `
               <li class="expression-item">
-                <div class="expression-text">${escapeHtml(e.expression)}</div>
-                <div class="expression-reading">
+                <div class="expression-glyph">
                   <span class="expression-kana">${escapeHtml(e.kana || "")}</span>
                   <span class="expression-romaji">${escapeHtml(e.romaji || "")}</span>
+                  <span class="expression-text">${escapeHtml(e.expression)}</span>
                 </div>
                 <div class="expression-meaning">${escapeHtml(e.meaning || "")}</div>
               </li>
@@ -237,10 +234,14 @@ function renderDetail(entry, familyResolved) {
         : `<ul class="family-list">
             ${familyResolved.map(f => `
               <li class="family-item" data-kanji="${escapeHtml(f.kanji)}" ${f.meaning ? "" : "data-missing=\"true\""}>
-                <div class="family-char">${escapeHtml(f.kanji)}</div>
+                <div class="family-glyph">
+                  ${f.kana ? `<span class="family-kana">${escapeHtml(f.kana)}</span>` : ""}
+                  ${f.romaji ? `<span class="family-romaji">${escapeHtml(f.romaji)}</span>` : ""}
+                  <span class="family-char">${escapeHtml(f.kanji)}</span>
+                </div>
                 <div class="family-meaning">
                   ${f.meaning
-                    ? `<span>${escapeHtml(f.meaning)}${f.kana ? ` — ${escapeHtml(f.kana)}` : ""}</span>`
+                    ? `<span>${escapeHtml(f.meaning)}</span>`
                     : `<span class="family-missing">(not yet in database)</span>`}
                   ${f.type ? `<span class="family-type">${escapeHtml(f.type)}</span>` : ""}
                 </div>

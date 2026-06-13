@@ -286,16 +286,18 @@ body {
   transition: color 0.15s;
 }
 
-.result-meta {
+.result-glyph {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  align-items: flex-start;
+  gap: 0.1rem;
   min-width: 0;
 }
 
 .result-reading {
   font-family: var(--font-jp);
   font-size: 0.95rem;
+  line-height: 1.2;
   color: var(--ink-soft);
 }
 
@@ -303,12 +305,14 @@ body {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 0.85rem;
+  line-height: 1.1;
   color: var(--ink-mute);
 }
 
 .result-meaning {
   font-size: 0.9rem;
   color: var(--ink-soft);
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -470,10 +474,10 @@ body {
 
 /* Detail header */
 .detail-header {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
   padding-bottom: 2rem;
   border-bottom: 2px solid var(--ink);
   margin-bottom: 2rem;
@@ -486,15 +490,10 @@ body {
   line-height: 0.9;
   color: var(--ink);
   position: relative;
+  display: inline-block;
 }
 
 @media (max-width: 640px) {
-  .detail-header {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
   .detail-kanji {
     font-size: 4.5rem;
   }
@@ -506,6 +505,7 @@ body {
   }
 }
 
+/* Red dot hugs the right edge of the glyph itself (not the column) */
 .detail-kanji::after {
   content: "";
   position: absolute;
@@ -517,22 +517,10 @@ body {
   border-radius: 50%;
 }
 
-.detail-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.detail-readings {
-  display: flex;
-  gap: 1.5rem;
-  align-items: baseline;
-  flex-wrap: wrap;
-}
-
 .detail-kana {
   font-family: var(--font-jp);
   font-size: 1.5rem;
+  line-height: 1.2;
   color: var(--ink);
 }
 
@@ -540,6 +528,7 @@ body {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1.15rem;
+  line-height: 1.1;
   color: var(--ink-mute);
 }
 
@@ -549,6 +538,7 @@ body {
   font-weight: 400;
   color: var(--ink-soft);
   line-height: 1.3;
+  margin-top: 0.65rem;
 }
 
 /* Detail sections */
@@ -605,6 +595,31 @@ body {
 
 .family-char {
   color: var(--vermillion-deep);
+  text-align: left;
+  min-width: 0;
+}
+
+.family-glyph {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.family-kana {
+  font-family: var(--font-jp);
+  font-size: 0.85rem;
+  line-height: 1.2;
+  color: var(--ink-soft);
+}
+
+.family-romaji {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.78rem;
+  line-height: 1.1;
+  color: var(--ink-mute);
 }
 
 .component-meaning, .family-meaning {
@@ -632,44 +647,31 @@ body {
 
 .expression-item {
   display: grid;
-  grid-template-columns: minmax(auto, 4rem) auto 1fr;
+  grid-template-columns: auto 1fr;
   gap: 1.25rem;
-  align-items: baseline;
+  align-items: center;
   padding: 0.85rem 0;
   border-bottom: 1px solid var(--rule-soft);
 }
 
+.expression-glyph {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
 @media (max-width: 640px) {
-  .expression-item {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
-    padding: 0.85rem 0;
-  }
   .expression-text {
     font-size: 1.1rem;
   }
-  .expression-reading {
-    flex-direction: row;
-    gap: 0.75rem;
-    align-items: baseline;
-  }
-}
-
-.expression-text {
-  font-family: var(--font-jp);
-  font-size: 1.2rem;
-  color: var(--ink);
-}
-
-.expression-reading {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
 }
 
 .expression-kana {
   font-family: var(--font-jp);
   font-size: 0.85rem;
+  line-height: 1.2;
   color: var(--ink-soft);
 }
 
@@ -677,7 +679,14 @@ body {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 0.78rem;
+  line-height: 1.1;
   color: var(--ink-mute);
+}
+
+.expression-text {
+  font-family: var(--font-jp);
+  font-size: 1.2rem;
+  color: var(--ink);
 }
 
 .expression-meaning {
