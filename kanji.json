@@ -1,0 +1,225 @@
+[
+  {
+    "kanji": "眠",
+    "meaning": "sleep, drowsy",
+    "kana": "ねむ",
+    "romaji": "nemu",
+    "components": [
+      { "component": "目", "meaning": "eye" },
+      { "component": "民", "meaning": "people (phonetic, gives ねむ reading)" }
+    ],
+    "expressions": [
+      { "expression": "眠い", "kana": "ねむい", "romaji": "nemui", "meaning": "sleepy" },
+      { "expression": "眠る", "kana": "ねむる", "romaji": "nemuru", "meaning": "to sleep" },
+      { "expression": "睡眠", "kana": "すいみん", "romaji": "suimin", "meaning": "sleep (noun)" }
+    ],
+    "family": [
+      { "kanji": "寝", "type": "related" }
+    ]
+  },
+  {
+    "kanji": "寝",
+    "meaning": "sleep, lie down",
+    "kana": "ね",
+    "romaji": "ne",
+    "components": [
+      { "component": "宀", "meaning": "roof" },
+      { "component": "爿", "meaning": "split wood, plank bed" },
+      { "component": "彐", "meaning": "hand" },
+      { "component": "又", "meaning": "hand, again" }
+    ],
+    "expressions": [
+      { "expression": "寝る", "kana": "ねる", "romaji": "neru", "meaning": "to sleep, lie down" },
+      { "expression": "寝室", "kana": "しんしつ", "romaji": "shinshitsu", "meaning": "bedroom" }
+    ],
+    "family": [
+      { "kanji": "眠", "type": "related" }
+    ]
+  },
+  {
+    "kanji": "朝",
+    "meaning": "morning",
+    "kana": "あさ",
+    "romaji": "asa",
+    "components": [
+      { "component": "龺", "meaning": "(unofficial) sun rising through grass/plants" },
+      { "component": "月", "meaning": "moon" }
+    ],
+    "expressions": [
+      { "expression": "朝", "kana": "あさ", "romaji": "asa", "meaning": "morning" },
+      { "expression": "朝食", "kana": "ちょうしょく", "romaji": "choushoku", "meaning": "breakfast" },
+      { "expression": "今朝", "kana": "けさ", "romaji": "kesa", "meaning": "this morning" }
+    ],
+    "family": []
+  },
+  {
+    "kanji": "料",
+    "meaning": "fee, materials, ingredients",
+    "kana": "りょう",
+    "romaji": "ryou",
+    "components": [
+      { "component": "米", "meaning": "rice" },
+      { "component": "斗", "meaning": "dipper, measuring scoop" }
+    ],
+    "expressions": [
+      { "expression": "料理", "kana": "りょうり", "romaji": "ryouri", "meaning": "cooking, cuisine" },
+      { "expression": "料金", "kana": "りょうきん", "romaji": "ryoukin", "meaning": "fee, charge" },
+      { "expression": "材料", "kana": "ざいりょう", "romaji": "zairyou", "meaning": "material, ingredients" }
+    ],
+    "family": []
+  },
+  {
+    "kanji": "理",
+    "meaning": "reason, principle, logic",
+    "kana": "り",
+    "romaji": "ri",
+    "components": [
+      { "component": "王", "meaning": "jade (variant of 玉)" },
+      { "component": "里", "meaning": "village" }
+    ],
+    "expressions": [
+      { "expression": "料理", "kana": "りょうり", "romaji": "ryouri", "meaning": "cooking" },
+      { "expression": "理由", "kana": "りゆう", "romaji": "riyuu", "meaning": "reason" },
+      { "expression": "理解", "kana": "りかい", "romaji": "rikai", "meaning": "understanding" }
+    ],
+    "family": []
+  },
+  {
+    "kanji": "里",
+    "meaning": "village, hometown, league",
+    "kana": "さと",
+    "romaji": "sato",
+    "components": [
+      { "component": "田", "meaning": "rice field" },
+      { "component": "土", "meaning": "earth, soil" }
+    ],
+    "expressions": [
+      { "expression": "里", "kana": "さと", "romaji": "sato", "meaning": "village, hometown" },
+      { "expression": "里山", "kana": "さとやま", "romaji": "satoyama", "meaning": "village woodland" }
+    ],
+    "family": []
+  },
+  {
+    "kanji": "降",
+    "meaning": "fall, descend",
+    "kana": "ふ",
+    "romaji": "fu",
+    "components": [
+      { "component": "阝", "meaning": "hill, mound (left form of 阜)" },
+      { "component": "夅", "meaning": "(unofficial) feet stepping downward" }
+    ],
+    "expressions": [
+      { "expression": "降る", "kana": "ふる", "romaji": "furu", "meaning": "to fall (rain, snow)" },
+      { "expression": "降りる", "kana": "おりる", "romaji": "oriru", "meaning": "to get off, descend" }
+    ],
+    "family": []
+  },
+  {
+    "kanji": "千",
+    "meaning": "thousand",
+    "kana": "せん",
+    "romaji": "sen",
+    "components": [],
+    "expressions": [
+      { "expression": "千", "kana": "せん", "romaji": "sen", "meaning": "thousand" },
+      { "expression": "千葉", "kana": "ちば", "romaji": "chiba", "meaning": "Chiba (place name; 千 read as ち, go-on reading)" }
+    ],
+    "family": []
+  },
+  {
+    "kanji": "北",
+    "meaning": "north",
+    "kana": "きた",
+    "romaji": "kita",
+    "components": [
+      { "component": "北", "meaning": "(unofficial) two people back-to-back" }
+    ],
+    "expressions": [
+      { "expression": "北", "kana": "きた", "romaji": "kita", "meaning": "north" },
+      { "expression": "北海道", "kana": "ほっかいどう", "romaji": "hokkaidou", "meaning": "Hokkaido" }
+    ],
+    "family": [
+      { "kanji": "南", "type": "cardinal direction" },
+      { "kanji": "東", "type": "cardinal direction" },
+      { "kanji": "西", "type": "cardinal direction" }
+    ]
+  },
+  {
+    "kanji": "南",
+    "meaning": "south",
+    "kana": "みなみ",
+    "romaji": "minami",
+    "components": [],
+    "expressions": [
+      { "expression": "南", "kana": "みなみ", "romaji": "minami", "meaning": "south" }
+    ],
+    "family": [
+      { "kanji": "北", "type": "cardinal direction" },
+      { "kanji": "東", "type": "cardinal direction" },
+      { "kanji": "西", "type": "cardinal direction" }
+    ]
+  },
+  {
+    "kanji": "東",
+    "meaning": "east",
+    "kana": "ひがし",
+    "romaji": "higashi",
+    "components": [],
+    "expressions": [
+      { "expression": "東", "kana": "ひがし", "romaji": "higashi", "meaning": "east" },
+      { "expression": "東京", "kana": "とうきょう", "romaji": "toukyou", "meaning": "Tokyo" }
+    ],
+    "family": [
+      { "kanji": "北", "type": "cardinal direction" },
+      { "kanji": "南", "type": "cardinal direction" },
+      { "kanji": "西", "type": "cardinal direction" }
+    ]
+  },
+  {
+    "kanji": "西",
+    "meaning": "west",
+    "kana": "にし",
+    "romaji": "nishi",
+    "components": [],
+    "expressions": [
+      { "expression": "西", "kana": "にし", "romaji": "nishi", "meaning": "west" }
+    ],
+    "family": [
+      { "kanji": "北", "type": "cardinal direction" },
+      { "kanji": "南", "type": "cardinal direction" },
+      { "kanji": "東", "type": "cardinal direction" }
+    ]
+  },
+  {
+    "kanji": "投",
+    "meaning": "throw",
+    "kana": "な",
+    "romaji": "na",
+    "components": [
+      { "component": "扌", "meaning": "hand" },
+      { "component": "殳", "meaning": "weapon, action with hand" }
+    ],
+    "expressions": [
+      { "expression": "投げる", "kana": "なげる", "romaji": "nageru", "meaning": "to throw" }
+    ],
+    "family": [
+      { "kanji": "拾", "type": "opposite" }
+    ]
+  },
+  {
+    "kanji": "拾",
+    "meaning": "pick up, gather",
+    "kana": "ひろ",
+    "romaji": "hiro",
+    "components": [
+      { "component": "扌", "meaning": "hand" },
+      { "component": "合", "meaning": "fit together (phonetic)" }
+    ],
+    "expressions": [
+      { "expression": "拾う", "kana": "ひろう", "romaji": "hirou", "meaning": "to pick up" }
+    ],
+    "family": [
+      { "kanji": "投", "type": "opposite" }
+    ]
+  }
+]

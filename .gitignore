@@ -1,0 +1,9 @@
+# Claude Code local settings
+.claude/settings.local.json
+
+# OS cruft
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
