@@ -301,14 +301,6 @@ body {
   color: var(--ink-soft);
 }
 
-.result-romaji {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 0.85rem;
-  line-height: 1.1;
-  color: var(--ink-mute);
-}
-
 .result-meaning {
   font-size: 0.9rem;
   color: var(--ink-soft);
@@ -524,14 +516,6 @@ body {
   color: var(--ink);
 }
 
-.detail-romaji {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.15rem;
-  line-height: 1.1;
-  color: var(--ink-mute);
-}
-
 .detail-meaning {
   font-family: var(--font-display);
   font-size: 1.4rem;
@@ -614,14 +598,6 @@ body {
   color: var(--ink-soft);
 }
 
-.family-romaji {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 0.78rem;
-  line-height: 1.1;
-  color: var(--ink-mute);
-}
-
 .component-meaning, .family-meaning {
   font-size: 0.95rem;
   color: var(--ink-soft);
@@ -673,14 +649,6 @@ body {
   font-size: 0.85rem;
   line-height: 1.2;
   color: var(--ink-soft);
-}
-
-.expression-romaji {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 0.78rem;
-  line-height: 1.1;
-  color: var(--ink-mute);
 }
 
 .expression-text {
