@@ -9,8 +9,8 @@
       { "component": "民", "meaning": "people (phonetic, gives ねむ reading)" }
     ],
     "expressions": [
-      { "expression": "眠い", "kana": "ねむい", "romaji": "nemui", "meaning": "sleepy" },
-      { "expression": "眠る", "kana": "ねむる", "romaji": "nemuru", "meaning": "to sleep" },
+      { "expression": "眠い", "kana": "ねむい", "romaji": "nemui", "okurigana": "い", "meaning": "sleepy" },
+      { "expression": "眠る", "kana": "ねむる", "romaji": "nemuru", "okurigana": "る", "meaning": "to sleep" },
       { "expression": "睡眠", "kana": "すいみん", "romaji": "suimin", "meaning": "sleep (noun)" }
     ],
     "family": [
@@ -29,7 +29,7 @@
       { "component": "又", "meaning": "hand, again" }
     ],
     "expressions": [
-      { "expression": "寝る", "kana": "ねる", "romaji": "neru", "meaning": "to sleep, lie down" },
+      { "expression": "寝る", "kana": "ねる", "romaji": "neru", "okurigana": "る", "meaning": "to sleep, lie down" },
       { "expression": "寝室", "kana": "しんしつ", "romaji": "shinshitsu", "meaning": "bedroom" }
     ],
     "family": [
@@ -109,8 +109,8 @@
       { "component": "夅", "meaning": "(unofficial) feet stepping downward" }
     ],
     "expressions": [
-      { "expression": "降る", "kana": "ふる", "romaji": "furu", "meaning": "to fall (rain, snow)" },
-      { "expression": "降りる", "kana": "おりる", "romaji": "oriru", "meaning": "to get off, descend" }
+      { "expression": "降る", "kana": "ふる", "romaji": "furu", "okurigana": "る", "meaning": "to fall (rain, snow)" },
+      { "expression": "降りる", "kana": "おりる", "romaji": "oriru", "okurigana": "りる", "meaning": "to get off, descend" }
     ],
     "family": []
   },
@@ -200,7 +200,7 @@
       { "component": "殳", "meaning": "weapon, action with hand" }
     ],
     "expressions": [
-      { "expression": "投げる", "kana": "なげる", "romaji": "nageru", "meaning": "to throw" }
+      { "expression": "投げる", "kana": "なげる", "romaji": "nageru", "okurigana": "げる", "meaning": "to throw" }
     ],
     "family": [
       { "kanji": "拾", "type": "opposite" }
@@ -216,7 +216,7 @@
       { "component": "合", "meaning": "fit together (phonetic)" }
     ],
     "expressions": [
-      { "expression": "拾う", "kana": "ひろう", "romaji": "hirou", "meaning": "to pick up" }
+      { "expression": "拾う", "kana": "ひろう", "romaji": "hirou", "okurigana": "う", "meaning": "to pick up" }
     ],
     "family": [
       { "kanji": "投", "type": "opposite" }

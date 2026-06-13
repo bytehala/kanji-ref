@@ -14,7 +14,7 @@ A personal kanji study app. Source of truth is `kanji.json`; on first load, the 
     { "component": "string", "meaning": "string" }
   ],
   "expressions": [
-    { "expression": "string", "kana": "string", "romaji": "string", "meaning": "string" }
+    { "expression": "string", "kana": "string (full reading)", "romaji": "string (full reading)", "okurigana": "string (optional)", "meaning": "string" }
   ],
   "family": [
     { "kanji": "string (single character — references another entry)", "type": "string (free-text, e.g. 'opposite', 'cardinal direction')" }
@@ -25,6 +25,7 @@ A personal kanji study app. Source of truth is `kanji.json`; on first load, the 
 ### Notes
 
 - **Components** can be any character — radical, partial element, or full kanji. Unofficial elements are labeled `(unofficial) <description>`.
+- **Expressions** store the full reading in `kana`/`romaji` (used for search). The optional `okurigana` field names the trailing kana already written in the expression (e.g. `投げる` → `"げる"`); the app strips it from the displayed reading so only the kanji's reading is shown above the word (`投げる` → `な` / `na`). Omit `okurigana` for all-kanji compounds like `睡眠`, where the whole reading belongs to the kanji.
 - **Family** entries reference other kanji by their character. The app resolves the meaning at display time from the linked entry. If a referenced entry doesn't exist yet, the family member is shown with a `(not yet in database)` placeholder.
 
 ## Searchable fields
@@ -90,8 +91,8 @@ Edit `kanji.json` and bump `DATA_VERSION` in `app.js` (top of file). On next pag
     { "component": "民", "meaning": "people (phonetic, gives ねむ reading)" }
   ],
   "expressions": [
-    { "expression": "眠い", "kana": "ねむい", "romaji": "nemui", "meaning": "sleepy" },
-    { "expression": "眠る", "kana": "ねむる", "romaji": "nemuru", "meaning": "to sleep" },
+    { "expression": "眠い", "kana": "ねむい", "romaji": "nemui", "okurigana": "い", "meaning": "sleepy" },
+    { "expression": "眠る", "kana": "ねむる", "romaji": "nemuru", "okurigana": "る", "meaning": "to sleep" },
     { "expression": "睡眠", "kana": "すいみん", "romaji": "suimin", "meaning": "sleep (noun)" }
   ],
   "family": [

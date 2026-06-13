@@ -1,6 +1,6 @@
 // Kanji Reference — IndexedDB-backed search over a JSON seed.
 
-const DATA_VERSION = 1; // bump when kanji.json shape changes; clears + reseeds
+const DATA_VERSION = 2; // bump when kanji.json shape changes; clears + reseeds
 const DB_NAME = "kanji-db";
 
 const db = new Dexie(DB_NAME);
@@ -18,7 +18,9 @@ async function seedIfNeeded() {
     return;
   }
 
-  const response = await fetch("./kanji.json");
+  // Version-tagged URL so a DATA_VERSION bump always fetches fresh data
+  // rather than a stale, heuristically-cached copy.
+  const response = await fetch(`./kanji.json?v=${DATA_VERSION}`);
   if (!response.ok) {
     throw new Error(`Failed to load kanji.json: ${response.status}`);
   }
@@ -178,6 +180,69 @@ function collapseSearchBar() {
   searchToggle.setAttribute("aria-expanded", "false");
 }
 
+// ---------- Reading helpers ----------
+
+// Hiragana → Hepburn romaji. Used to strip an expression's okurigana romaji
+// so only the kanji's reading is shown. Digraphs (きゃ…) are matched first.
+const KANA_ROMAJI = {
+  "きゃ": "kya", "きゅ": "kyu", "きょ": "kyo", "しゃ": "sha", "しゅ": "shu", "しょ": "sho",
+  "ちゃ": "cha", "ちゅ": "chu", "ちょ": "cho", "にゃ": "nya", "にゅ": "nyu", "にょ": "nyo",
+  "ひゃ": "hya", "ひゅ": "hyu", "ひょ": "hyo", "みゃ": "mya", "みゅ": "myu", "みょ": "myo",
+  "りゃ": "rya", "りゅ": "ryu", "りょ": "ryo", "ぎゃ": "gya", "ぎゅ": "gyu", "ぎょ": "gyo",
+  "じゃ": "ja", "じゅ": "ju", "じょ": "jo", "びゃ": "bya", "びゅ": "byu", "びょ": "byo",
+  "ぴゃ": "pya", "ぴゅ": "pyu", "ぴょ": "pyo",
+  "あ": "a", "い": "i", "う": "u", "え": "e", "お": "o",
+  "か": "ka", "き": "ki", "く": "ku", "け": "ke", "こ": "ko",
+  "が": "ga", "ぎ": "gi", "ぐ": "gu", "げ": "ge", "ご": "go",
+  "さ": "sa", "し": "shi", "す": "su", "せ": "se", "そ": "so",
+  "ざ": "za", "じ": "ji", "ず": "zu", "ぜ": "ze", "ぞ": "zo",
+  "た": "ta", "ち": "chi", "つ": "tsu", "て": "te", "と": "to",
+  "だ": "da", "ぢ": "ji", "づ": "zu", "で": "de", "ど": "do",
+  "な": "na", "に": "ni", "ぬ": "nu", "ね": "ne", "の": "no",
+  "は": "ha", "ひ": "hi", "ふ": "fu", "へ": "he", "ほ": "ho",
+  "ば": "ba", "び": "bi", "ぶ": "bu", "べ": "be", "ぼ": "bo",
+  "ぱ": "pa", "ぴ": "pi", "ぷ": "pu", "ぺ": "pe", "ぽ": "po",
+  "ま": "ma", "み": "mi", "む": "mu", "め": "me", "も": "mo",
+  "や": "ya", "ゆ": "yu", "よ": "yo",
+  "ら": "ra", "り": "ri", "る": "ru", "れ": "re", "ろ": "ro",
+  "わ": "wa", "ゐ": "i", "ゑ": "e", "を": "o", "ん": "n",
+};
+
+function romanizeKana(kana) {
+  if (!kana) return "";
+  let out = "";
+  let i = 0;
+  while (i < kana.length) {
+    const two = kana.slice(i, i + 2);
+    if (KANA_ROMAJI[two]) { out += KANA_ROMAJI[two]; i += 2; continue; }
+    const ch = kana[i];
+    if (ch === "っ") {
+      // Sokuon: double the next consonant.
+      const rest = romanizeKana(kana.slice(i + 1));
+      return out + (/^[a-z]/.test(rest) ? rest[0] : "") + rest;
+    }
+    out += KANA_ROMAJI[ch] ?? ch;
+    i += 1;
+  }
+  return out;
+}
+
+// Returns the reading to display for an expression: the full kana/romaji minus
+// any okurigana, which is already visible in the expression text itself.
+function expressionReading(e) {
+  let kana = e.kana || "";
+  let romaji = e.romaji || "";
+  const oku = e.okurigana;
+  if (oku && kana.endsWith(oku)) {
+    kana = kana.slice(0, kana.length - oku.length);
+    const okuRomaji = romanizeKana(oku);
+    if (okuRomaji && romaji.endsWith(okuRomaji)) {
+      romaji = romaji.slice(0, romaji.length - okuRomaji.length);
+    }
+  }
+  return { kana, romaji };
+}
+
 function renderDetail(entry, familyResolved) {
   detailPlaceholder.hidden = true;
   detailContent.hidden = false;
@@ -213,16 +278,19 @@ function renderDetail(entry, familyResolved) {
       ${expressions.length === 0
         ? `<p class="empty-section">No expressions recorded.</p>`
         : `<ul class="expression-list">
-            ${expressions.map(e => `
+            ${expressions.map(e => {
+              const r = expressionReading(e);
+              return `
               <li class="expression-item">
                 <div class="expression-glyph">
-                  <span class="expression-kana">${escapeHtml(e.kana || "")}</span>
-                  <span class="expression-romaji">${escapeHtml(e.romaji || "")}</span>
+                  <span class="expression-kana">${escapeHtml(r.kana)}</span>
+                  <span class="expression-romaji">${escapeHtml(r.romaji)}</span>
                   <span class="expression-text">${escapeHtml(e.expression)}</span>
                 </div>
                 <div class="expression-meaning">${escapeHtml(e.meaning || "")}</div>
               </li>
-            `).join("")}
+            `;
+            }).join("")}
           </ul>`
       }
     </section>
