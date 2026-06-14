@@ -1,6 +1,6 @@
 // Kanji Reference — IndexedDB-backed search over a JSON seed.
 
-const DATA_VERSION = 5; // bump when kanji.json shape changes; clears + reseeds
+const DATA_VERSION = 6; // bump when kanji.json shape changes; clears + reseeds
 const DB_NAME = "kanji-db";
 
 const db = new Dexie(DB_NAME);
@@ -180,20 +180,31 @@ function collapseSearchBar() {
 
 // ---------- Reading helpers ----------
 
-// Build ruby HTML for an expression. Each `breakdown` segment's reading floats
-// above only its own character(s) (料 → りょう, 理 → り); kana-only segments
-// (no reading) render plain. Falls back to the full kana over the whole word
-// when no breakdown is present. Returns escaped HTML — do not re-escape.
+// Build ruby HTML for an expression. Each `breakdown` segment with a reading
+// becomes one base/rt pair inside a `<ruby>` element; consecutive segments
+// share one ruby so per-kanji bases sit alongside per-kanji rt's (the
+// `<ruby>A<rt>a</rt>B<rt>b</rt></ruby>` form — the browser aligns each rt
+// over its own base). Kana-only segments (okurigana) close any open ruby
+// and render plain. `<rp>` parens are emitted for non-ruby fallback. Falls
+// back to a single base/rt pair when no breakdown is present.
 function renderExpressionRuby(e) {
-  const seg = (text, reading) =>
-    reading
-      ? `<ruby>${escapeHtml(text)}<rt>${escapeHtml(reading)}</rt></ruby>`
-      : escapeHtml(text);
+  const segments = Array.isArray(e.breakdown) && e.breakdown.length
+    ? e.breakdown
+    : [{ text: e.expression, reading: e.kana || "" }];
 
-  if (Array.isArray(e.breakdown) && e.breakdown.length) {
-    return e.breakdown.map(s => seg(s.text, s.reading)).join("");
+  let html = "";
+  let openRuby = false;
+  for (const s of segments) {
+    if (s.reading) {
+      if (!openRuby) { html += "<ruby>"; openRuby = true; }
+      html += `${escapeHtml(s.text)}<rp>(</rp><rt>${escapeHtml(s.reading)}</rt><rp>)</rp>`;
+    } else {
+      if (openRuby) { html += "</ruby>"; openRuby = false; }
+      html += escapeHtml(s.text);
+    }
   }
-  return seg(e.expression, e.kana || "");
+  if (openRuby) html += "</ruby>";
+  return html;
 }
 
 function renderDetail(entry, familyResolved) {

@@ -89,6 +89,23 @@ test("each expression has a non-empty breakdown and no stale okurigana", () => {
   });
 });
 
+// ---------- Per-kanji ruby rule ----------
+// A breakdown segment with a `reading` represents one kanji's furigana,
+// and HTML <ruby> aligns one <rt> per base character — so multi-char text
+// would smear the reading across glyphs (the 一人/ひとり problem: と could
+// land over 一 or 人). Force single-character bases for any segment that
+// shows a reading. Okurigana segments (no reading) can stay multi-char.
+test("each segment with a reading has single-character text", () => {
+  everyExpression((e, k) => {
+    for (const s of e.breakdown) {
+      if (!s.reading) continue;
+      const chars = [...s.text].length;
+      assert.equal(chars, 1,
+        `${k.kanji} / ${e.expression}: segment "${s.text}" has a reading but spans ${chars} chars — split it per kanji so each furigana aligns over its own glyph`);
+    }
+  });
+});
+
 // ---------- Breakdown reconstructs the expression ----------
 test("breakdown text concatenates to the expression", () => {
   everyExpression((e, k) => {

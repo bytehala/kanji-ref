@@ -29,7 +29,7 @@
     ],
     "expressions": [
       { "expression": "今日", "kana": "きょう", "romaji": "kyou", "meaning": "today",
-        "breakdown": [{ "text": "今日", "reading": "きょう" }] },
+        "breakdown": [{ "text": "今", "reading": "きょ" }, { "text": "日", "reading": "う" }] },
       { "expression": "日本", "kana": "にほん", "romaji": "nihon", "meaning": "Japan",
         "breakdown": [{ "text": "日", "reading": "に" }, { "text": "本", "reading": "ほん" }] },
       { "expression": "毎日", "kana": "まいにち", "romaji": "mainichi", "meaning": "every day",
@@ -249,7 +249,7 @@
       { "expression": "田", "kana": "た", "romaji": "ta", "meaning": "rice field",
         "breakdown": [{ "text": "田", "reading": "た" }] },
       { "expression": "田舎", "kana": "いなか", "romaji": "inaka", "meaning": "rural area, countryside",
-        "breakdown": [{ "text": "田舎", "reading": "いなか" }] },
+        "breakdown": [{ "text": "田", "reading": "いな" }, { "text": "舎", "reading": "か" }] },
       { "expression": "水田", "kana": "すいでん", "romaji": "suiden", "meaning": "paddy field",
         "breakdown": [{ "text": "水", "reading": "すい" }, { "text": "田", "reading": "でん" }] }
     ],
@@ -270,7 +270,7 @@
       { "expression": "三百", "kana": "さんびゃく", "romaji": "sanbyaku", "meaning": "three hundred",
         "breakdown": [{ "text": "三", "reading": "さん" }, { "text": "百", "reading": "びゃく" }] },
       { "expression": "八百屋", "kana": "やおや", "romaji": "yaoya", "meaning": "greengrocer",
-        "breakdown": [{ "text": "八百", "reading": "やお" }, { "text": "屋", "reading": "や" }] }
+        "breakdown": [{ "text": "八", "reading": "や" }, { "text": "百", "reading": "お" }, { "text": "屋", "reading": "や" }] }
     ],
     "family": [
       { "kanji": "千", "type": "power of ten" },
@@ -554,7 +554,7 @@
       { "expression": "人", "kana": "ひと", "romaji": "hito", "meaning": "person",
         "breakdown": [{ "text": "人", "reading": "ひと" }] },
       { "expression": "大人", "kana": "おとな", "romaji": "otona", "meaning": "adult",
-        "breakdown": [{ "text": "大人", "reading": "おとな" }] },
+        "breakdown": [{ "text": "大", "reading": "おと" }, { "text": "人", "reading": "な" }] },
       { "expression": "日本人", "kana": "にほんじん", "romaji": "nihonjin", "meaning": "Japanese person",
         "breakdown": [{ "text": "日", "reading": "に" }, { "text": "本", "reading": "ほん" }, { "text": "人", "reading": "じん" }] }
     ],
@@ -576,7 +576,7 @@
       { "expression": "一月", "kana": "いちがつ", "romaji": "ichigatsu", "meaning": "January",
         "breakdown": [{ "text": "一", "reading": "いち" }, { "text": "月", "reading": "がつ" }] },
       { "expression": "一人", "kana": "ひとり", "romaji": "hitori", "meaning": "one person, alone",
-        "breakdown": [{ "text": "一人", "reading": "ひとり" }] }
+        "breakdown": [{ "text": "一", "reading": "ひと" }, { "text": "人", "reading": "り" }] }
     ],
     "family": [
       { "kanji": "二", "type": "next digit" }
@@ -596,7 +596,7 @@
       { "expression": "二月", "kana": "にがつ", "romaji": "nigatsu", "meaning": "February",
         "breakdown": [{ "text": "二", "reading": "に" }, { "text": "月", "reading": "がつ" }] },
       { "expression": "二人", "kana": "ふたり", "romaji": "futari", "meaning": "two people",
-        "breakdown": [{ "text": "二人", "reading": "ふたり" }] }
+        "breakdown": [{ "text": "二", "reading": "ふた" }, { "text": "人", "reading": "り" }] }
     ],
     "family": [
       { "kanji": "一", "type": "previous digit" },
@@ -721,7 +721,7 @@
       { "expression": "八月", "kana": "はちがつ", "romaji": "hachigatsu", "meaning": "August",
         "breakdown": [{ "text": "八", "reading": "はち" }, { "text": "月", "reading": "がつ" }] },
       { "expression": "八百屋", "kana": "やおや", "romaji": "yaoya", "meaning": "greengrocer",
-        "breakdown": [{ "text": "八百", "reading": "やお" }, { "text": "屋", "reading": "や" }] }
+        "breakdown": [{ "text": "八", "reading": "や" }, { "text": "百", "reading": "お" }, { "text": "屋", "reading": "や" }] }
     ],
     "family": [
       { "kanji": "七", "type": "previous digit" },

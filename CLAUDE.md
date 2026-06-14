@@ -40,16 +40,33 @@ preceded by `(unofficial)`:
 | `Kangxi radical 85 (sanzui) — water` | `Kangxi radical 85 (water variant) — sanzui, the three-stroke water radical on the left` |
 | `(unofficial) advancing foot (variant of 牛)` | `(unofficial) tip / advancing foot — variant of 牛, the upper part of 先` |
 
+## Breakdown segments are per-kanji
+
+Each breakdown segment that has a `reading` must have **single-character** text.
+HTML `<ruby>` aligns one `<rt>` per base character, so a multi-char base with a
+single reading would smear the kana across glyphs and let the reader guess which
+kana belongs to which kanji (the 一人 / ひとり problem — does と go over 一 or
+人?). Split jukujikun per kanji even when the split is arbitrary:
+
+- ✅ `一人` → `[{"text":"一","reading":"ひと"}, {"text":"人","reading":"り"}]`
+- ✅ `今日` → `[{"text":"今","reading":"きょ"}, {"text":"日","reading":"う"}]`
+- ✅ `田舎` → `[{"text":"田","reading":"いな"}, {"text":"舎","reading":"か"}]`
+- ❌ `[{"text":"一人","reading":"ひとり"}]` — single rt over multi-char base
+
+Okurigana segments (no `reading`) may stay multi-char (`まれる`, `がる`).
+
 ## Data invariants
 
-`kanji.json` is checked by `npm test` for three drift modes:
+`kanji.json` is checked by `npm test` for these drift modes:
 
 1. Every expression has a non-empty `breakdown`; its `text` segments concatenate
    to the `expression` and its `reading` segments (falling back to `text` for
    kana-only segments) concatenate to the `kana`.
-2. Every entry-level `romaji` matches the wāpuro romanization of its `kana`
+2. Each segment with a `reading` has single-character text (the per-kanji rule
+   above).
+3. Every entry-level `romaji` matches the wāpuro romanization of its `kana`
    (うう → `uu`, おう → `ou`, sokuon doubles the next consonant).
-3. Same check on every expression's `kana`/`romaji`.
+4. Same check on every expression's `kana`/`romaji`.
 
 Run `npm test` after any `kanji.json` edit. When adding kana the romanizer
 table in `test/data.test.mjs` doesn't cover yet (e.g. new katakana, edge cases
