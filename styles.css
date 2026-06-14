@@ -64,10 +64,8 @@ body {
   max-width: var(--max-width);
   margin: 0 auto;
   display: flex;
-  align-items: flex-end;
-  gap: 3rem;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .header-top {
@@ -76,15 +74,11 @@ body {
   gap: 1rem;
 }
 
-@media (max-width: 640px) {
-  .header-inner {
-    gap: 0.75rem;
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .header-top {
-    justify-content: space-between;
-  }
+/* Title flexes to its natural width; margin-right: auto pushes the search
+   input and toggle to the right edge of the row. */
+.site-title {
+  flex: 0 0 auto;
+  margin-right: auto;
 }
 
 /* Search toggle — mobile only */
@@ -112,28 +106,26 @@ body {
 }
 
 @media (max-width: 640px) {
-  .search-toggle {
-    display: inline-flex;
-  }
-  /* Collapsed by default; the entry count stays visible, the input hides */
-  .search-input {
-    display: none;
-  }
-  .site-header.search-open .search-input {
-    display: block;
-  }
-}
-
-@media (max-width: 640px) {
   .title-jp {
     font-size: 1.75rem;
   }
   .title-en {
     font-size: 0.85rem;
   }
-  .search-wrap {
-    max-width: 100%;
-    min-width: 0;
+  .search-toggle {
+    display: inline-flex;
+  }
+  /* Collapsed by default: the search field hides and the entry count stays
+     visible below. Tapping the magnifier hides "kanji reference" so the
+     input can expand into its slot, keeping the header at one row. */
+  .search-input {
+    display: none;
+  }
+  .site-header.search-open .title-en {
+    display: none;
+  }
+  .site-header.search-open .search-input {
+    display: block;
   }
 }
 
@@ -164,15 +156,12 @@ body {
   text-transform: lowercase;
 }
 
-/* Search */
-.search-wrap {
-  flex: 1;
-  min-width: 280px;
-  max-width: 480px;
-}
-
+/* Search input lives inside .header-top. It flex-grows to fill the
+   remaining row, capped so it doesn't sprawl on wide desktops. */
 .search-input {
-  width: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 480px;
   padding: 0.75rem 1rem;
   background: transparent;
   border: none;
@@ -194,7 +183,6 @@ body {
 }
 
 .search-meta {
-  margin-top: 0.5rem;
   font-size: 0.75rem;
   color: var(--ink-mute);
   letter-spacing: 0.04em;
@@ -381,10 +369,13 @@ body {
     animation: slideUp 0.28s ease-out;
   }
   .detail-pane.is-open .detail-content {
-    max-height: 85vh;
+    max-height: 92vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 1.5rem 1rem 2.5rem;
+    /* Generous bottom padding so the navigator can scroll the family
+       section (or any other) up to the top, even on entries whose
+       natural content height is shorter than the sheet. */
+    padding: 0.85rem 1rem 80vh;
     border-radius: inherit;
   }
   .detail-pane.is-open .detail-placeholder {
@@ -464,15 +455,64 @@ body {
   padding: 1rem 0;
 }
 
-/* Detail header */
+/* Detail header — kanji + readings on the left, jump-nav buttons on the
+   right (語 expressions / 部 components / 族 family). */
 .detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 2rem;
+}
+
+.detail-glyph {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.25rem;
-  padding-bottom: 2rem;
-  border-bottom: 2px solid var(--ink);
-  margin-bottom: 2rem;
+  min-width: 0;
+}
+
+.detail-nav {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.detail-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  font-family: var(--font-jp);
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: var(--paper-soft);
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.detail-nav-btn:hover,
+.detail-nav-btn:focus-visible {
+  background: var(--highlight);
+  border-color: var(--vermillion);
+  color: var(--vermillion);
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  .detail-nav-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1rem;
+  }
 }
 
 .detail-kanji {

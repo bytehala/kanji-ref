@@ -17,14 +17,6 @@
           <span class="title-jp">漢字</span>
           <span class="title-en">Kanji Reference</span>
         </h1>
-        <button class="search-toggle" id="search-toggle" type="button" aria-label="Search" aria-expanded="false">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
-            <circle cx="11" cy="11" r="7"></circle>
-            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
-          </svg>
-        </button>
-      </div>
-      <div class="search-wrap">
         <input
           type="search"
           id="search"
@@ -33,8 +25,14 @@
           autocomplete="off"
           spellcheck="false"
         >
-        <div class="search-meta" id="search-meta"></div>
+        <button class="search-toggle" id="search-toggle" type="button" aria-label="Search" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+          </svg>
+        </button>
       </div>
+      <div class="search-meta" id="search-meta"></div>
     </div>
   </header>
 

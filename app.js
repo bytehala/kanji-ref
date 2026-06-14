@@ -158,7 +158,11 @@ async function selectKanji(kanji) {
 function openDetail() {
   detailPane.classList.add("is-open");
   document.body.classList.add("detail-open");
+  // detailPane is position:fixed on mobile so its own scrollTop is a no-op;
+  // detailContent is the scrollable container. Reset both so navigating from
+  // a family link lands the user at the top of the new entry.
   detailPane.scrollTop = 0;
+  detailContent.scrollTop = 0;
 }
 
 function closeDetail() {
@@ -216,12 +220,19 @@ function renderDetail(entry, familyResolved) {
 
   detailContent.innerHTML = `
     <header class="detail-header">
-      <span class="detail-kana">${escapeHtml(entry.kana || "")}</span>
-      <div class="detail-kanji">${escapeHtml(entry.kanji)}</div>
-      <div class="detail-meaning">${escapeHtml(entry.meaning || "")}</div>
+      <div class="detail-glyph">
+        <span class="detail-kana">${escapeHtml(entry.kana || "")}</span>
+        <div class="detail-kanji">${escapeHtml(entry.kanji)}</div>
+        <div class="detail-meaning">${escapeHtml(entry.meaning || "")}</div>
+      </div>
+      <nav class="detail-nav" aria-label="Jump to section">
+        <button type="button" class="detail-nav-btn" data-target="expressions" aria-label="Jump to expressions" title="Expressions">語</button>
+        <button type="button" class="detail-nav-btn" data-target="components" aria-label="Jump to components" title="Components">部</button>
+        <button type="button" class="detail-nav-btn" data-target="family" aria-label="Jump to family" title="Family">族</button>
+      </nav>
     </header>
 
-    <section class="detail-section">
+    <section class="detail-section" data-section="expressions">
       <h2 class="section-title">Expressions</h2>
       ${expressions.length === 0
         ? `<p class="empty-section">No expressions recorded.</p>`
@@ -236,7 +247,7 @@ function renderDetail(entry, familyResolved) {
       }
     </section>
 
-    <section class="detail-section">
+    <section class="detail-section" data-section="components">
       <h2 class="section-title">Components</h2>
       ${components.length === 0
         ? `<p class="empty-section">Atomic — no decomposable components.</p>`
@@ -251,7 +262,7 @@ function renderDetail(entry, familyResolved) {
       }
     </section>
 
-    <section class="detail-section">
+    <section class="detail-section" data-section="family">
       <h2 class="section-title">Family</h2>
       ${familyResolved.length === 0
         ? `<p class="empty-section">No family connections recorded.</p>`
@@ -274,6 +285,17 @@ function renderDetail(entry, familyResolved) {
       }
     </section>
   `;
+
+  // Wire up navigator clicks → smooth-scroll to the named section.
+  // scrollIntoView finds the nearest scrollable ancestor — on mobile that's
+  // .detail-content (the sheet's overflow:auto container); on desktop the
+  // page itself. Same call works for both.
+  detailContent.querySelectorAll(".detail-nav-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = detailContent.querySelector(`[data-section="${btn.dataset.target}"]`);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
 
   // Wire up component clicks → search by that component.
   // On mobile, close the overlay and reveal the query so results are visible.
