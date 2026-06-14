@@ -1,6 +1,6 @@
 // Kanji Reference — IndexedDB-backed search over a JSON seed.
 
-const DATA_VERSION = 4; // bump when kanji.json shape changes; clears + reseeds
+const DATA_VERSION = 5; // bump when kanji.json shape changes; clears + reseeds
 const DB_NAME = "kanji-db";
 
 const db = new Dexie(DB_NAME);

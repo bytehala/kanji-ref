@@ -5,7 +5,7 @@
     "kana": "やま",
     "romaji": "yama",
     "components": [
-      { "component": "山", "meaning": "Kangxi radical 46 — mountain. The kanji IS this radical (three peaks)." }
+      { "component": "山", "meaning": "Kangxi radical 46 — mountain" }
     ],
     "expressions": [
       { "expression": "山", "kana": "やま", "romaji": "yama", "meaning": "mountain",
@@ -25,7 +25,7 @@
     "kana": "ひ",
     "romaji": "hi",
     "components": [
-      { "component": "日", "meaning": "Kangxi radical 72 — sun, day. The kanji IS this radical (a stylized sun with a dot)." }
+      { "component": "日", "meaning": "Kangxi radical 72 — sun, day" }
     ],
     "expressions": [
       { "expression": "今日", "kana": "きょう", "romaji": "kyou", "meaning": "today",
@@ -52,7 +52,7 @@
     "kana": "つき",
     "romaji": "tsuki",
     "components": [
-      { "component": "月", "meaning": "Kangxi radical 74 — moon, month. The kanji IS this radical (a crescent moon)." }
+      { "component": "月", "meaning": "Kangxi radical 74 — moon, month" }
     ],
     "expressions": [
       { "expression": "月", "kana": "つき", "romaji": "tsuki", "meaning": "moon, month",
@@ -77,7 +77,7 @@
     "kana": "みず",
     "romaji": "mizu",
     "components": [
-      { "component": "水", "meaning": "Kangxi radical 85 — water. The kanji IS this radical (streams flowing from a central source)." }
+      { "component": "水", "meaning": "Kangxi radical 85 — water" }
     ],
     "expressions": [
       { "expression": "水", "kana": "みず", "romaji": "mizu", "meaning": "water",
@@ -104,7 +104,7 @@
     "kana": "き",
     "romaji": "ki",
     "components": [
-      { "component": "木", "meaning": "Kangxi radical 75 — tree. The kanji IS this radical (trunk with branches and roots)." }
+      { "component": "木", "meaning": "Kangxi radical 75 — tree" }
     ],
     "expressions": [
       { "expression": "木", "kana": "き", "romaji": "ki", "meaning": "tree, wood",
@@ -127,7 +127,7 @@
     "kana": "かね",
     "romaji": "kane",
     "components": [
-      { "component": "金", "meaning": "Kangxi radical 167 — gold, metal. The kanji IS this radical (a covered nugget under a roof)." }
+      { "component": "金", "meaning": "Kangxi radical 167 — gold, metal" }
     ],
     "expressions": [
       { "expression": "お金", "kana": "おかね", "romaji": "okane", "meaning": "money",
@@ -153,7 +153,7 @@
     "kana": "ひ",
     "romaji": "hi",
     "components": [
-      { "component": "火", "meaning": "Kangxi radical 86 — fire. The kanji IS this radical (a person standing with sparks at each side)." }
+      { "component": "火", "meaning": "Kangxi radical 86 — fire" }
     ],
     "expressions": [
       { "expression": "火", "kana": "ひ", "romaji": "hi", "meaning": "fire",
@@ -178,7 +178,7 @@
     "kana": "つち",
     "romaji": "tsuchi",
     "components": [
-      { "component": "土", "meaning": "Kangxi radical 32 — earth, soil. The kanji IS this radical (a plant pushing up from the ground)." }
+      { "component": "土", "meaning": "Kangxi radical 32 — earth, soil" }
     ],
     "expressions": [
       { "expression": "土", "kana": "つち", "romaji": "tsuchi", "meaning": "earth, soil",
@@ -203,7 +203,7 @@
     "kana": "かわ",
     "romaji": "kawa",
     "components": [
-      { "component": "川", "meaning": "Kangxi radical 47 — river. The kanji IS this radical (three flowing lines of water)." }
+      { "component": "川", "meaning": "Kangxi radical 47 — river" }
     ],
     "expressions": [
       { "expression": "川", "kana": "かわ", "romaji": "kawa", "meaning": "river",
@@ -223,8 +223,8 @@
     "kana": "いけ",
     "romaji": "ike",
     "components": [
-      { "component": "氵", "meaning": "Kangxi radical 85 (water variant) — sanzui, the three-stroke water radical on the left" },
-      { "component": "也", "meaning": "(unofficial) also, snake — phonetic, gives the 'chi/ike' reading" }
+      { "component": "氵", "meaning": "Kangxi radical 85 (sanzui) — water" },
+      { "component": "也", "meaning": "(unofficial) also, snake (phonetic, gives ち/いけ)" }
     ],
     "expressions": [
       { "expression": "池", "kana": "いけ", "romaji": "ike", "meaning": "pond",
@@ -243,7 +243,7 @@
     "kana": "た",
     "romaji": "ta",
     "components": [
-      { "component": "田", "meaning": "Kangxi radical 102 — rice field. The kanji IS this radical (a field divided into four plots)." }
+      { "component": "田", "meaning": "Kangxi radical 102 — rice field" }
     ],
     "expressions": [
       { "expression": "田", "kana": "た", "romaji": "ta", "meaning": "rice field",
@@ -261,8 +261,8 @@
     "kana": "ひゃく",
     "romaji": "hyaku",
     "components": [
-      { "component": "一", "meaning": "Kangxi radical 1 — one (single stroke on top)" },
-      { "component": "白", "meaning": "Kangxi radical 106 — white, bright (the body of the kanji)" }
+      { "component": "一", "meaning": "Kangxi radical 1 — one" },
+      { "component": "白", "meaning": "Kangxi radical 106 — white" }
     ],
     "expressions": [
       { "expression": "百", "kana": "ひゃく", "romaji": "hyaku", "meaning": "hundred",
@@ -283,8 +283,8 @@
     "kana": "せん",
     "romaji": "sen",
     "components": [
-      { "component": "丿", "meaning": "Kangxi radical 4 — slash, slope (slanting stroke on top)" },
-      { "component": "十", "meaning": "Kangxi radical 24 — ten (the cross below)" }
+      { "component": "丿", "meaning": "Kangxi radical 4 — slash, slope" },
+      { "component": "十", "meaning": "Kangxi radical 24 — ten" }
     ],
     "expressions": [
       { "expression": "千", "kana": "せん", "romaji": "sen", "meaning": "thousand",
@@ -303,8 +303,8 @@
     "kana": "まん",
     "romaji": "man",
     "components": [
-      { "component": "一", "meaning": "Kangxi radical 1 — one (single stroke on top)" },
-      { "component": "万", "meaning": "(unofficial) the swirling lower strokes — a stylized scorpion or swarm, suggesting 'countless'" }
+      { "component": "一", "meaning": "Kangxi radical 1 — one" },
+      { "component": "万", "meaning": "(unofficial) scorpion / swarm — suggests 'countless'" }
     ],
     "expressions": [
       { "expression": "一万", "kana": "いちまん", "romaji": "ichiman", "meaning": "ten thousand",
@@ -323,8 +323,7 @@
     "kana": "えん",
     "romaji": "en",
     "components": [
-      { "component": "冂", "meaning": "Kangxi radical 13 — open box / down-enclosure (the outer rim of a coin)" },
-      { "component": "円", "meaning": "(unofficial) the inner strokes — a simplified form of 圓; picture a coin with a marking inside" }
+      { "component": "冂", "meaning": "Kangxi radical 13 — open box" }
     ],
     "expressions": [
       { "expression": "円", "kana": "えん", "romaji": "en", "meaning": "yen",
@@ -342,9 +341,9 @@
     "kana": "がく",
     "romaji": "gaku",
     "components": [
-      { "component": "⺍", "meaning": "(unofficial) hands stretching out / scattering — the three short strokes on top" },
-      { "component": "冖", "meaning": "Kangxi radical 14 — cover (the roof under the hands)" },
-      { "component": "子", "meaning": "Kangxi radical 39 — child (a child under the roof, learning)" }
+      { "component": "⺍", "meaning": "(unofficial) hands stretching out" },
+      { "component": "冖", "meaning": "Kangxi radical 14 — cover" },
+      { "component": "子", "meaning": "Kangxi radical 39 — child" }
     ],
     "expressions": [
       { "expression": "学校", "kana": "がっこう", "romaji": "gakkou", "meaning": "school",
@@ -362,7 +361,7 @@
     "kana": "う",
     "romaji": "u",
     "components": [
-      { "component": "生", "meaning": "Kangxi radical 100 — life, birth. The kanji IS this radical (a sprout rising out of the earth)." }
+      { "component": "生", "meaning": "Kangxi radical 100 — life, birth" }
     ],
     "expressions": [
       { "expression": "生まれる", "kana": "うまれる", "romaji": "umareru", "meaning": "to be born",
@@ -380,8 +379,8 @@
     "kana": "さき",
     "romaji": "saki",
     "components": [
-      { "component": "⺧", "meaning": "(unofficial) tip / advancing foot — variant of 牛, the upper part of 先" },
-      { "component": "儿", "meaning": "Kangxi radical 10 — legs, walking person (the two legs at the bottom)" }
+      { "component": "⺧", "meaning": "(unofficial) advancing foot (variant of 牛)" },
+      { "component": "儿", "meaning": "Kangxi radical 10 — legs, walking person" }
     ],
     "expressions": [
       { "expression": "先", "kana": "さき", "romaji": "saki", "meaning": "ahead, tip",
@@ -399,8 +398,8 @@
     "kana": "あ",
     "romaji": "a",
     "components": [
-      { "component": "人", "meaning": "Kangxi radical 9 — person (overhead, people coming together)" },
-      { "component": "云", "meaning": "(unofficial) cloud — simplified from 會's bottom; picture conversation rising like steam" }
+      { "component": "人", "meaning": "Kangxi radical 9 — person" },
+      { "component": "云", "meaning": "(unofficial) cloud (simplified from 會's bottom)" }
     ],
     "expressions": [
       { "expression": "会う", "kana": "あう", "romaji": "au", "meaning": "to meet",
@@ -420,8 +419,8 @@
     "kana": "しゃ",
     "romaji": "sha",
     "components": [
-      { "component": "⺬", "meaning": "Kangxi radical 113 — altar, spirit (the shimesu-hen on the left)" },
-      { "component": "土", "meaning": "Kangxi radical 32 — earth (the earth where the shrine stands, also phonetic)" }
+      { "component": "⺬", "meaning": "Kangxi radical 113 (shimesu-hen) — altar, spirit" },
+      { "component": "土", "meaning": "Kangxi radical 32 — earth (phonetic)" }
     ],
     "expressions": [
       { "expression": "社会", "kana": "しゃかい", "romaji": "shakai", "meaning": "society",
@@ -439,8 +438,8 @@
     "kana": "いん",
     "romaji": "in",
     "components": [
-      { "component": "口", "meaning": "Kangxi radical 30 — mouth (at the top)" },
-      { "component": "貝", "meaning": "Kangxi radical 154 — shell, money/treasure (the body — historically a tripod vessel)" }
+      { "component": "口", "meaning": "Kangxi radical 30 — mouth" },
+      { "component": "貝", "meaning": "Kangxi radical 154 — shell, money/treasure" }
     ],
     "expressions": [
       { "expression": "公務員", "kana": "こうむいん", "romaji": "koumuin", "meaning": "public employee, civil servant",
@@ -456,8 +455,8 @@
     "kana": "もの",
     "romaji": "mono",
     "components": [
-      { "component": "耂", "meaning": "Kangxi radical 125 (variant of 老) — old (the slanted strokes on top)" },
-      { "component": "日", "meaning": "Kangxi radical 72 — sun (the box at the bottom; historically a cauldron)" }
+      { "component": "耂", "meaning": "Kangxi radical 125 (variant of 老) — old" },
+      { "component": "日", "meaning": "Kangxi radical 72 — sun" }
     ],
     "expressions": [
       { "expression": "医者", "kana": "いしゃ", "romaji": "isha", "meaning": "doctor",
@@ -475,8 +474,8 @@
     "kana": "い",
     "romaji": "i",
     "components": [
-      { "component": "匚", "meaning": "Kangxi radical 22 — right-open box (a container, picture a medicine cabinet)" },
-      { "component": "矢", "meaning": "Kangxi radical 111 — arrow (the arrow inside; historically arrows were stored for use)" }
+      { "component": "匚", "meaning": "Kangxi radical 22 — right-open box" },
+      { "component": "矢", "meaning": "Kangxi radical 111 — arrow" }
     ],
     "expressions": [
       { "expression": "医学", "kana": "いがく", "romaji": "igaku", "meaning": "medical science",
@@ -493,7 +492,7 @@
     "romaji": "hon",
     "components": [
       { "component": "木", "meaning": "Kangxi radical 75 — tree" },
-      { "component": "一", "meaning": "Kangxi radical 1 — one (a line marking the tree's root; the 'origin' of 本)" }
+      { "component": "一", "meaning": "Kangxi radical 1 — one" }
     ],
     "expressions": [
       { "expression": "本", "kana": "ほん", "romaji": "hon", "meaning": "book",
@@ -511,8 +510,8 @@
     "kana": "なか",
     "romaji": "naka",
     "components": [
-      { "component": "口", "meaning": "Kangxi radical 30 — mouth, enclosure (the box)" },
-      { "component": "丨", "meaning": "Kangxi radical 2 — vertical stroke (piercing the middle of the box)" }
+      { "component": "口", "meaning": "Kangxi radical 30 — mouth, enclosure" },
+      { "component": "丨", "meaning": "Kangxi radical 2 — vertical stroke" }
     ],
     "expressions": [
       { "expression": "中", "kana": "なか", "romaji": "naka", "meaning": "inside, middle",
@@ -530,8 +529,8 @@
     "kana": "くに",
     "romaji": "kuni",
     "components": [
-      { "component": "囗", "meaning": "Kangxi radical 31 — enclosure (the border around a country)" },
-      { "component": "玉", "meaning": "Kangxi radical 96 — jade (the treasure inside the border)" }
+      { "component": "囗", "meaning": "Kangxi radical 31 — enclosure" },
+      { "component": "玉", "meaning": "Kangxi radical 96 — jade" }
     ],
     "expressions": [
       { "expression": "国", "kana": "くに", "romaji": "kuni", "meaning": "country",
@@ -549,7 +548,7 @@
     "kana": "ひと",
     "romaji": "hito",
     "components": [
-      { "component": "人", "meaning": "Kangxi radical 9 — person. The kanji IS this radical (a standing figure, two legs)." }
+      { "component": "人", "meaning": "Kangxi radical 9 — person" }
     ],
     "expressions": [
       { "expression": "人", "kana": "ひと", "romaji": "hito", "meaning": "person",
@@ -569,7 +568,7 @@
     "kana": "いち",
     "romaji": "ichi",
     "components": [
-      { "component": "一", "meaning": "Kangxi radical 1 — one. The kanji IS this radical (a single horizontal stroke)." }
+      { "component": "一", "meaning": "Kangxi radical 1 — one" }
     ],
     "expressions": [
       { "expression": "一", "kana": "いち", "romaji": "ichi", "meaning": "one",
@@ -589,7 +588,7 @@
     "kana": "に",
     "romaji": "ni",
     "components": [
-      { "component": "二", "meaning": "Kangxi radical 7 — two. The kanji IS this radical (two horizontal strokes)." }
+      { "component": "二", "meaning": "Kangxi radical 7 — two" }
     ],
     "expressions": [
       { "expression": "二", "kana": "に", "romaji": "ni", "meaning": "two",
@@ -610,7 +609,7 @@
     "kana": "さん",
     "romaji": "san",
     "components": [
-      { "component": "一", "meaning": "Kangxi radical 1 — one (three of them stacked)" }
+      { "component": "一", "meaning": "Kangxi radical 1 — one" }
     ],
     "expressions": [
       { "expression": "三", "kana": "さん", "romaji": "san", "meaning": "three",
@@ -629,8 +628,8 @@
     "kana": "し",
     "romaji": "shi",
     "components": [
-      { "component": "囗", "meaning": "Kangxi radical 31 — enclosure (the outer box)" },
-      { "component": "儿", "meaning": "Kangxi radical 10 — legs (the inner strokes, like two legs in a box)" }
+      { "component": "囗", "meaning": "Kangxi radical 31 — enclosure" },
+      { "component": "儿", "meaning": "Kangxi radical 10 — legs" }
     ],
     "expressions": [
       { "expression": "四", "kana": "し", "romaji": "shi", "meaning": "four",
@@ -651,8 +650,8 @@
     "kana": "ご",
     "romaji": "go",
     "components": [
-      { "component": "二", "meaning": "Kangxi radical 7 — two (the top and bottom horizontal strokes form a frame)" },
-      { "component": "五", "meaning": "(unofficial) the X in the middle — an old tally crossing for 'five'" }
+      { "component": "二", "meaning": "Kangxi radical 7 — two" },
+      { "component": "五", "meaning": "(unofficial) tally crossing — 'five'" }
     ],
     "expressions": [
       { "expression": "五", "kana": "ご", "romaji": "go", "meaning": "five",
@@ -673,8 +672,8 @@
     "kana": "ろく",
     "romaji": "roku",
     "components": [
-      { "component": "亠", "meaning": "Kangxi radical 8 — lid (the top strokes)" },
-      { "component": "八", "meaning": "Kangxi radical 12 — eight, divide (the two legs below)" }
+      { "component": "亠", "meaning": "Kangxi radical 8 — lid" },
+      { "component": "八", "meaning": "Kangxi radical 12 — eight, divide" }
     ],
     "expressions": [
       { "expression": "六", "kana": "ろく", "romaji": "roku", "meaning": "six",
@@ -693,7 +692,7 @@
     "kana": "しち",
     "romaji": "shichi",
     "components": [
-      { "component": "七", "meaning": "(unofficial) horizontal stroke crossed by a curving vertical — a stylized cutting motion; historically meant 'cut'" }
+      { "component": "七", "meaning": "(unofficial) cutting motion — historically 'cut'" }
     ],
     "expressions": [
       { "expression": "七", "kana": "しち", "romaji": "shichi", "meaning": "seven",
@@ -714,7 +713,7 @@
     "kana": "はち",
     "romaji": "hachi",
     "components": [
-      { "component": "八", "meaning": "Kangxi radical 12 — eight, divide. The kanji IS this radical (two strokes splitting apart)." }
+      { "component": "八", "meaning": "Kangxi radical 12 — eight, divide" }
     ],
     "expressions": [
       { "expression": "八", "kana": "はち", "romaji": "hachi", "meaning": "eight",
@@ -735,7 +734,7 @@
     "kana": "きゅう",
     "romaji": "kyuu",
     "components": [
-      { "component": "九", "meaning": "(unofficial) a curving stroke ending in a hook — historically the elbow/forearm reaching its limit (nine = almost ten)" }
+      { "component": "九", "meaning": "(unofficial) elbow/forearm at its limit — 'almost ten'" }
     ],
     "expressions": [
       { "expression": "九", "kana": "きゅう", "romaji": "kyuu", "meaning": "nine",
