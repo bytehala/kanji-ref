@@ -1,1 +1,13 @@
+TODO
+
+next steps:
+---
+DONE
+june 14
+- ruby tags for family and hero (kana centered above kanji, like expressions)
+- navigation: minimalist (kanji only, thin connector lines, no boxes)
+- navigation: horizontal on the lower-right of the sticky hero
+- navigation: "expressions" selected by default; updates on click
+- navigation kanji prefix the matching section title (語 EXPRESSIONS, 部 COMPONENTS, 族 FAMILY)
+---
 june 13 - done adding mnn unit 1-3, except numbers

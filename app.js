@@ -221,19 +221,18 @@ function renderDetail(entry, familyResolved) {
   detailContent.innerHTML = `
     <header class="detail-header">
       <div class="detail-glyph">
-        <span class="detail-kana">${escapeHtml(entry.kana || "")}</span>
-        <div class="detail-kanji">${escapeHtml(entry.kanji)}</div>
+        <ruby class="detail-kanji">${escapeHtml(entry.kanji)}<rp>(</rp><rt>${escapeHtml(entry.kana || "")}</rt><rp>)</rp></ruby>
         <div class="detail-meaning">${escapeHtml(entry.meaning || "")}</div>
       </div>
       <nav class="detail-nav" aria-label="Jump to section">
-        <button type="button" class="detail-nav-btn" data-target="expressions" aria-label="Jump to expressions" title="Expressions">語</button>
+        <button type="button" class="detail-nav-btn is-active" data-target="expressions" aria-label="Jump to expressions" title="Expressions">語</button>
         <button type="button" class="detail-nav-btn" data-target="components" aria-label="Jump to components" title="Components">部</button>
         <button type="button" class="detail-nav-btn" data-target="family" aria-label="Jump to family" title="Family">族</button>
       </nav>
     </header>
 
     <section class="detail-section" data-section="expressions">
-      <h2 class="section-title">Expressions</h2>
+      <h2 class="section-title"><span class="section-title-jp">語</span>Expressions</h2>
       ${expressions.length === 0
         ? `<p class="empty-section">No expressions recorded.</p>`
         : `<ul class="expression-list">
@@ -248,7 +247,7 @@ function renderDetail(entry, familyResolved) {
     </section>
 
     <section class="detail-section" data-section="components">
-      <h2 class="section-title">Components</h2>
+      <h2 class="section-title"><span class="section-title-jp">部</span>Components</h2>
       ${components.length === 0
         ? `<p class="empty-section">Atomic — no decomposable components.</p>`
         : `<ul class="component-list">
@@ -263,16 +262,15 @@ function renderDetail(entry, familyResolved) {
     </section>
 
     <section class="detail-section" data-section="family">
-      <h2 class="section-title">Family</h2>
+      <h2 class="section-title"><span class="section-title-jp">族</span>Family</h2>
       ${familyResolved.length === 0
         ? `<p class="empty-section">No family connections recorded.</p>`
         : `<ul class="family-list">
             ${familyResolved.map(f => `
               <li class="family-item" data-kanji="${escapeHtml(f.kanji)}" ${f.meaning ? "" : "data-missing=\"true\""}>
-                <div class="family-glyph">
-                  ${f.kana ? `<span class="family-kana">${escapeHtml(f.kana)}</span>` : ""}
-                  <span class="family-char">${escapeHtml(f.kanji)}</span>
-                </div>
+                ${f.kana
+                  ? `<ruby class="family-char">${escapeHtml(f.kanji)}<rp>(</rp><rt>${escapeHtml(f.kana)}</rt><rp>)</rp></ruby>`
+                  : `<span class="family-char">${escapeHtml(f.kanji)}</span>`}
                 <div class="family-meaning">
                   ${f.meaning
                     ? `<span>${escapeHtml(f.meaning)}</span>`
@@ -286,14 +284,16 @@ function renderDetail(entry, familyResolved) {
     </section>
   `;
 
-  // Wire up navigator clicks → smooth-scroll to the named section.
-  // scrollIntoView finds the nearest scrollable ancestor — on mobile that's
-  // .detail-content (the sheet's overflow:auto container); on desktop the
-  // page itself. Same call works for both.
+  // Wire up navigator clicks → smooth-scroll to the named section, and mark
+  // the clicked nav button as active. scrollIntoView finds the nearest
+  // scrollable ancestor — on mobile that's .detail-content; on desktop the
+  // page. Same call works for both.
   detailContent.querySelectorAll(".detail-nav-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const target = detailContent.querySelector(`[data-section="${btn.dataset.target}"]`);
       if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      detailContent.querySelectorAll(".detail-nav-btn").forEach(b => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
     });
   });
 

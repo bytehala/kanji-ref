@@ -516,17 +516,21 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Block (not flex) so that the <ruby class="detail-kanji"> inside keeps its
+   default `display: ruby` — flex items are blockified, which kills ruby
+   annotation alignment. Children stack vertically by default block flow. */
 .detail-glyph {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.25rem;
+  display: block;
   min-width: 0;
 }
 
+/* Minimalist navigator: kanji only, thin connector lines between them, no
+   buttons or borders. Anchored to the lower-right of the sticky hero. */
 .detail-nav {
   display: flex;
-  gap: 0.4rem;
+  align-items: center;
+  gap: 0;
+  align-self: flex-end;
   flex-shrink: 0;
 }
 
@@ -534,36 +538,43 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: 0;
+  padding: 0.2rem 0.35rem;
   font-family: var(--font-jp);
-  font-size: 1.1rem;
-  font-weight: 500;
-  background: var(--paper-soft);
-  color: var(--ink-soft);
-  border: 1px solid var(--rule);
-  border-radius: 0.4rem;
+  font-size: 1.15rem;
+  font-weight: 400;
+  background: transparent;
+  color: var(--ink-mute);
+  border: none;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  transition: color 0.2s;
 }
 
 .detail-nav-btn:hover,
 .detail-nav-btn:focus-visible {
-  background: var(--highlight);
-  border-color: var(--vermillion);
   color: var(--vermillion);
   outline: none;
 }
 
-@media (max-width: 640px) {
-  .detail-nav-btn {
-    width: 2.25rem;
-    height: 2.25rem;
-    font-size: 1rem;
-  }
+.detail-nav-btn.is-active {
+  color: var(--ink);
+  font-weight: 500;
 }
 
+/* Connector line between buttons (only between, not after the last). */
+.detail-nav-btn:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 1px;
+  background: var(--rule);
+  margin-left: 0.45rem;
+  vertical-align: middle;
+}
+
+/* Hero kanji is a <ruby> — its <rt> floats the kana centered above the
+   glyph. No display override: the <ruby> element's default `display: ruby`
+   is what handles annotation alignment; setting inline-block / block kills
+   it. position: relative is kept so the red-dot ::after can anchor here. */
 .detail-kanji {
   font-family: var(--font-jp);
   font-size: 7rem;
@@ -571,22 +582,31 @@ body {
   line-height: 0.9;
   color: var(--ink);
   position: relative;
-  display: inline-block;
+  ruby-position: over;
+  -webkit-ruby-position: before;
+}
+
+.detail-kanji rt {
+  font-family: var(--font-jp);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
 }
 
 @media (max-width: 640px) {
   .detail-kanji {
     font-size: 4.5rem;
   }
+  .detail-kanji rt {
+    font-size: 1.25rem;
+  }
   .detail-meaning {
     font-size: 1.15rem;
   }
-  .detail-kana {
-    font-size: 1.25rem;
-  }
 }
 
-/* Red dot hugs the right edge of the glyph itself (not the column) */
+/* Red dot hugs the right edge of the base glyph (not the rt above it). */
 .detail-kanji::after {
   content: "";
   position: absolute;
@@ -596,13 +616,6 @@ body {
   height: 0.5rem;
   background: var(--vermillion);
   border-radius: 50%;
-}
-
-.detail-kana {
-  font-family: var(--font-jp);
-  font-size: 1.5rem;
-  line-height: 1.2;
-  color: var(--ink);
 }
 
 .detail-meaning {
@@ -629,6 +642,18 @@ body {
   margin: 0 0 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--rule);
+}
+
+/* The same kanji used in the navigator (語/部/族) prefixes each section
+   title so the user can map a nav tap to a section visually. */
+.section-title-jp {
+  font-family: var(--font-jp);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-right: 0.55rem;
+  text-transform: none;
+  letter-spacing: 0;
+  vertical-align: middle;
 }
 
 .component-list, .family-list, .expression-list {
@@ -670,19 +695,17 @@ body {
   color: var(--vermillion-deep);
   text-align: left;
   min-width: 0;
+  ruby-position: over;
+  -webkit-ruby-position: before;
 }
 
-.family-glyph {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.1rem;
-  min-width: 0;
-}
-
-.family-kana {
+/* Family kanji uses <ruby> when its linked entry has a reading — the rt
+   floats the kana centered above the kanji (same convention as the hero
+   and expressions). */
+.family-char rt {
   font-family: var(--font-jp);
   font-size: 0.85rem;
+  font-weight: 400;
   line-height: 1.2;
   color: var(--ink-soft);
 }
