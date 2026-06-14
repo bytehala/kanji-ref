@@ -1,44 +1,57 @@
 # kanji-ref — conventions
 
-## Component meanings (kanji.json)
+## Component schema (kanji.json)
 
-Each `components[].meaning` follows the canonical short form:
+Each item in `components[]` has:
 
+- `component` — the literal piece (radical, sub-radical, partial element, or unofficial)
+- `meaning` — short English name only (no radical prefix, no pictogram description)
+- `kangxi` — the Kangxi radical number (1–214), **only when the piece is one of the 214 radicals**
+
+The app renders the kangxi number as a muted superscript next to the name
+(`mouth (30)`). The user doesn't need to memorize the index — knowing the
+piece *is* a Kangxi radical is what's useful.
+
+```json
+{ "component": "口", "meaning": "mouth", "kangxi": 30 }
+{ "component": "囗", "meaning": "enclosure", "kangxi": 31 }
+{ "component": "⺍", "meaning": "(unofficial) hands stretching out" }
 ```
-Kangxi radical N — name
-```
 
-For non-radical pieces, drop the radical prefix and write the name only,
-preceded by `(unofficial)`:
+### Keep these parentheticals in `meaning` (they carry real info)
 
-```
-(unofficial) <brief name>
-```
-
-### Keep parentheticals only when they carry real information
-
-- **Variant-form names** — `Kangxi radical 85 (sanzui) — water`,
-  `Kangxi radical 113 (shimesu-hen) — altar, spirit`
-- **"Variant of X" notes** — `Kangxi radical 125 (variant of 老) — old`,
-  `(unofficial) advancing foot (variant of 牛)`
+- **Variant-form name** — `water (sanzui)`, `altar, spirit (shimesu-hen)`
+- **"Variant of X" note** — `old (variant of 老)`, `(unofficial) advancing foot (variant of 牛)`
 - **Phonetic role** — `<name> (phonetic, gives <reading>)` or just `<name> (phonetic)`
 
 ### Drop everything else
 
-- Pictogram/layout asides: ❌ *"(three peaks)"*, *"(the box)"*, *"(stroke on top)"*,
+- Pictogram/layout asides — *"(three peaks)"*, *"(the box)"*, *"(stroke on top)"*,
   *"(the body of the kanji)"*
-- The phrase ❌ *"The kanji IS this radical (...)"*
+- The phrase *"The kanji IS this radical (...)"*
 - Any description of *where* a piece sits in the kanji
+- The literal "Kangxi radical N —" prefix — the `kangxi` field handles it
+
+### Decompose verbosely — include both the bigger groupings and their sub-pieces
+
+When a kanji decomposes into a larger piece that *itself* breaks down further,
+list **every** distinct component the learner might recognize. Don't stop at the
+first level. Example for 投 (throw):
+
+- ✅ 扌 hand (64), 殳 weapon (79), 几 table (16), 又 hand-right (29)
+
+Even though 殳 contains 几+又, list all four — it helps the learner build
+the pictogram. Same principle anywhere a piece decomposes further: 員 → 口,
+貝, 目, 八 (since 貝 itself = 目+八). Stop only at indivisible strokes or when
+the next level isn't a recognizable component.
 
 ### Examples
 
 | ✅ | ❌ |
 |---|---|
-| `Kangxi radical 1 — one` | `Kangxi radical 1 — one. The kanji IS this radical (a single horizontal stroke).` |
-| `Kangxi radical 47 — river` | `Kangxi radical 47 — river. The kanji IS this radical (three flowing lines of water).` |
-| `Kangxi radical 31 — enclosure` | `Kangxi radical 31 — enclosure (the outer box)` |
-| `Kangxi radical 85 (sanzui) — water` | `Kangxi radical 85 (water variant) — sanzui, the three-stroke water radical on the left` |
-| `(unofficial) advancing foot (variant of 牛)` | `(unofficial) tip / advancing foot — variant of 牛, the upper part of 先` |
+| `{"component":"口", "meaning":"mouth", "kangxi":30}` | `{"component":"口", "meaning":"Kangxi radical 30 — mouth"}` |
+| `{"component":"氵", "meaning":"water (sanzui)", "kangxi":85}` | `{"component":"氵", "meaning":"Kangxi radical 85 (water variant) — sanzui"}` |
+| `{"component":"⺧", "meaning":"(unofficial) advancing foot (variant of 牛)"}` | `{"component":"⺧", "meaning":"(unofficial) tip / advancing foot — variant of 牛, the upper part of 先"}` |
 
 ## No redundant single-kanji expressions
 

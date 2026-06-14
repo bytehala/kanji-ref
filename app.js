@@ -1,6 +1,6 @@
 // Kanji Reference — IndexedDB-backed search over a JSON seed.
 
-const DATA_VERSION = 7; // bump when kanji.json shape changes; clears + reseeds
+const DATA_VERSION = 8; // bump when kanji.json shape changes; clears + reseeds
 const DB_NAME = "kanji-db";
 
 const db = new Dexie(DB_NAME);
@@ -254,7 +254,11 @@ function renderDetail(entry, familyResolved) {
             ${components.map(c => `
               <li class="component-item" data-search="${escapeHtml(c.component)}">
                 <div class="component-char">${escapeHtml(c.component)}</div>
-                <div class="component-meaning">${escapeHtml(c.meaning || "")}</div>
+                <div class="component-meaning">${escapeHtml(c.meaning || "")}${
+                  Number.isInteger(c.kangxi)
+                    ? ` <span class="component-kangxi">(${c.kangxi})</span>`
+                    : ""
+                }</div>
               </li>
             `).join("")}
           </ul>`

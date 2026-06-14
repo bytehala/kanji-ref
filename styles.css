@@ -710,12 +710,32 @@ body {
   color: var(--ink-soft);
 }
 
-.component-meaning, .family-meaning {
+/* Component meaning is single-line text + an optional (N) superscript.
+   Family meaning has multiple children (gloss + type) so it keeps the
+   column flex it had before. */
+.component-meaning {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.family-meaning {
   font-size: 0.95rem;
   color: var(--ink-soft);
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
+}
+
+/* The Kangxi radical number rendered as a muted superscript next to the
+   component's name — knowing the piece is a Kangxi radical is useful,
+   memorizing the index isn't, so the number stays visually quiet. */
+.component-kangxi {
+  font-size: 0.7em;
+  color: var(--ink-mute);
+  vertical-align: super;
+  font-feature-settings: "tnum" 1;
+  margin-left: 0.1em;
+  font-style: normal;
 }
 
 .family-type {

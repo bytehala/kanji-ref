@@ -5,7 +5,7 @@
     "kana": "やま",
     "romaji": "yama",
     "components": [
-      { "component": "山", "meaning": "Kangxi radical 46 — mountain" }
+      { "component": "山", "meaning": "mountain", "kangxi": 46 }
     ],
     "expressions": [
       { "expression": "沢山", "kana": "たくさん", "romaji": "takusan", "meaning": "a lot, many",
@@ -23,7 +23,7 @@
     "kana": "ひ",
     "romaji": "hi",
     "components": [
-      { "component": "日", "meaning": "Kangxi radical 72 — sun, day" }
+      { "component": "日", "meaning": "sun, day", "kangxi": 72 }
     ],
     "expressions": [
       { "expression": "今日", "kana": "きょう", "romaji": "kyou", "meaning": "today",
@@ -50,7 +50,7 @@
     "kana": "つき",
     "romaji": "tsuki",
     "components": [
-      { "component": "月", "meaning": "Kangxi radical 74 — moon, month" }
+      { "component": "月", "meaning": "moon, month", "kangxi": 74 }
     ],
     "expressions": [
       { "expression": "今月", "kana": "こんげつ", "romaji": "kongetsu", "meaning": "this month",
@@ -73,7 +73,7 @@
     "kana": "みず",
     "romaji": "mizu",
     "components": [
-      { "component": "水", "meaning": "Kangxi radical 85 — water" }
+      { "component": "水", "meaning": "water", "kangxi": 85 }
     ],
     "expressions": [
       { "expression": "水曜日", "kana": "すいようび", "romaji": "suiyoubi", "meaning": "Wednesday",
@@ -98,7 +98,7 @@
     "kana": "き",
     "romaji": "ki",
     "components": [
-      { "component": "木", "meaning": "Kangxi radical 75 — tree" }
+      { "component": "木", "meaning": "tree", "kangxi": 75 }
     ],
     "expressions": [
       { "expression": "木曜日", "kana": "もくようび", "romaji": "mokuyoubi", "meaning": "Thursday",
@@ -119,7 +119,7 @@
     "kana": "かね",
     "romaji": "kane",
     "components": [
-      { "component": "金", "meaning": "Kangxi radical 167 — gold, metal" }
+      { "component": "金", "meaning": "gold, metal", "kangxi": 167 }
     ],
     "expressions": [
       { "expression": "お金", "kana": "おかね", "romaji": "okane", "meaning": "money",
@@ -145,7 +145,7 @@
     "kana": "ひ",
     "romaji": "hi",
     "components": [
-      { "component": "火", "meaning": "Kangxi radical 86 — fire" }
+      { "component": "火", "meaning": "fire", "kangxi": 86 }
     ],
     "expressions": [
       { "expression": "火曜日", "kana": "かようび", "romaji": "kayoubi", "meaning": "Tuesday",
@@ -168,7 +168,7 @@
     "kana": "つち",
     "romaji": "tsuchi",
     "components": [
-      { "component": "土", "meaning": "Kangxi radical 32 — earth, soil" }
+      { "component": "土", "meaning": "earth, soil", "kangxi": 32 }
     ],
     "expressions": [
       { "expression": "土曜日", "kana": "どようび", "romaji": "doyoubi", "meaning": "Saturday",
@@ -191,7 +191,7 @@
     "kana": "かわ",
     "romaji": "kawa",
     "components": [
-      { "component": "川", "meaning": "Kangxi radical 47 — river" }
+      { "component": "川", "meaning": "river", "kangxi": 47 }
     ],
     "expressions": [
       { "expression": "河川", "kana": "かせん", "romaji": "kasen", "meaning": "rivers, waterways",
@@ -209,7 +209,7 @@
     "kana": "いけ",
     "romaji": "ike",
     "components": [
-      { "component": "氵", "meaning": "Kangxi radical 85 (sanzui) — water" },
+      { "component": "氵", "meaning": "water (sanzui)", "kangxi": 85 },
       { "component": "也", "meaning": "(unofficial) also, snake (phonetic, gives ち/いけ)" }
     ],
     "expressions": [
@@ -227,7 +227,7 @@
     "kana": "た",
     "romaji": "ta",
     "components": [
-      { "component": "田", "meaning": "Kangxi radical 102 — rice field" }
+      { "component": "田", "meaning": "rice field", "kangxi": 102 }
     ],
     "expressions": [
       { "expression": "田舎", "kana": "いなか", "romaji": "inaka", "meaning": "rural area, countryside",
@@ -243,8 +243,8 @@
     "kana": "ひゃく",
     "romaji": "hyaku",
     "components": [
-      { "component": "一", "meaning": "Kangxi radical 1 — one" },
-      { "component": "白", "meaning": "Kangxi radical 106 — white" }
+      { "component": "一", "meaning": "one", "kangxi": 1 },
+      { "component": "白", "meaning": "white", "kangxi": 106 }
     ],
     "expressions": [
       { "expression": "三百", "kana": "さんびゃく", "romaji": "sanbyaku", "meaning": "three hundred",
@@ -263,8 +263,8 @@
     "kana": "せん",
     "romaji": "sen",
     "components": [
-      { "component": "丿", "meaning": "Kangxi radical 4 — slash, slope" },
-      { "component": "十", "meaning": "Kangxi radical 24 — ten" }
+      { "component": "丿", "meaning": "slash, slope", "kangxi": 4 },
+      { "component": "十", "meaning": "ten", "kangxi": 24 }
     ],
     "expressions": [
       { "expression": "千葉", "kana": "ちば", "romaji": "chiba", "meaning": "Chiba (place name)",
@@ -281,7 +281,7 @@
     "kana": "まん",
     "romaji": "man",
     "components": [
-      { "component": "一", "meaning": "Kangxi radical 1 — one" },
+      { "component": "一", "meaning": "one", "kangxi": 1 },
       { "component": "万", "meaning": "(unofficial) scorpion / swarm — suggests 'countless'" }
     ],
     "expressions": [
@@ -301,7 +301,7 @@
     "kana": "えん",
     "romaji": "en",
     "components": [
-      { "component": "冂", "meaning": "Kangxi radical 13 — open box" }
+      { "component": "冂", "meaning": "open box", "kangxi": 13 }
     ],
     "expressions": [
       { "expression": "円滑", "kana": "えんかつ", "romaji": "enkatsu", "meaning": "smooth, harmonious",
@@ -318,8 +318,8 @@
     "romaji": "gaku",
     "components": [
       { "component": "⺍", "meaning": "(unofficial) hands stretching out" },
-      { "component": "冖", "meaning": "Kangxi radical 14 — cover" },
-      { "component": "子", "meaning": "Kangxi radical 39 — child" }
+      { "component": "冖", "meaning": "cover", "kangxi": 14 },
+      { "component": "子", "meaning": "child", "kangxi": 39 }
     ],
     "expressions": [
       { "expression": "学校", "kana": "がっこう", "romaji": "gakkou", "meaning": "school",
@@ -337,7 +337,7 @@
     "kana": "う",
     "romaji": "u",
     "components": [
-      { "component": "生", "meaning": "Kangxi radical 100 — life, birth" }
+      { "component": "生", "meaning": "life, birth", "kangxi": 100 }
     ],
     "expressions": [
       { "expression": "生まれる", "kana": "うまれる", "romaji": "umareru", "meaning": "to be born",
@@ -356,7 +356,7 @@
     "romaji": "saki",
     "components": [
       { "component": "⺧", "meaning": "(unofficial) advancing foot (variant of 牛)" },
-      { "component": "儿", "meaning": "Kangxi radical 10 — legs, walking person" }
+      { "component": "儿", "meaning": "legs, walking person", "kangxi": 10 }
     ],
     "expressions": [
       { "expression": "先生", "kana": "せんせい", "romaji": "sensei", "meaning": "teacher",
@@ -372,7 +372,7 @@
     "kana": "あ",
     "romaji": "a",
     "components": [
-      { "component": "人", "meaning": "Kangxi radical 9 — person" },
+      { "component": "人", "meaning": "person", "kangxi": 9 },
       { "component": "云", "meaning": "(unofficial) cloud (simplified from 會's bottom)" }
     ],
     "expressions": [
@@ -393,8 +393,8 @@
     "kana": "しゃ",
     "romaji": "sha",
     "components": [
-      { "component": "⺬", "meaning": "Kangxi radical 113 (shimesu-hen) — altar, spirit" },
-      { "component": "土", "meaning": "Kangxi radical 32 — earth (phonetic)" }
+      { "component": "⺬", "meaning": "altar, spirit (shimesu-hen)", "kangxi": 113 },
+      { "component": "土", "meaning": "earth (phonetic)", "kangxi": 32 }
     ],
     "expressions": [
       { "expression": "社会", "kana": "しゃかい", "romaji": "shakai", "meaning": "society",
@@ -412,8 +412,10 @@
     "kana": "いん",
     "romaji": "in",
     "components": [
-      { "component": "口", "meaning": "Kangxi radical 30 — mouth" },
-      { "component": "貝", "meaning": "Kangxi radical 154 — shell, money/treasure" }
+      { "component": "口", "meaning": "mouth", "kangxi": 30 },
+      { "component": "貝", "meaning": "shell, money/treasure", "kangxi": 154 },
+      { "component": "目", "meaning": "eye", "kangxi": 109 },
+      { "component": "八", "meaning": "eight, divide", "kangxi": 12 }
     ],
     "expressions": [
       { "expression": "公務員", "kana": "こうむいん", "romaji": "koumuin", "meaning": "public employee, civil servant",
@@ -429,8 +431,8 @@
     "kana": "もの",
     "romaji": "mono",
     "components": [
-      { "component": "耂", "meaning": "Kangxi radical 125 (variant of 老) — old" },
-      { "component": "日", "meaning": "Kangxi radical 72 — sun" }
+      { "component": "耂", "meaning": "old (variant of 老)", "kangxi": 125 },
+      { "component": "日", "meaning": "sun", "kangxi": 72 }
     ],
     "expressions": [
       { "expression": "医者", "kana": "いしゃ", "romaji": "isha", "meaning": "doctor",
@@ -448,8 +450,8 @@
     "kana": "い",
     "romaji": "i",
     "components": [
-      { "component": "匚", "meaning": "Kangxi radical 22 — right-open box" },
-      { "component": "矢", "meaning": "Kangxi radical 111 — arrow" }
+      { "component": "匚", "meaning": "right-open box", "kangxi": 22 },
+      { "component": "矢", "meaning": "arrow", "kangxi": 111 }
     ],
     "expressions": [
       { "expression": "医学", "kana": "いがく", "romaji": "igaku", "meaning": "medical science",
@@ -465,8 +467,8 @@
     "kana": "ほん",
     "romaji": "hon",
     "components": [
-      { "component": "木", "meaning": "Kangxi radical 75 — tree" },
-      { "component": "一", "meaning": "Kangxi radical 1 — one" }
+      { "component": "木", "meaning": "tree", "kangxi": 75 },
+      { "component": "一", "meaning": "one", "kangxi": 1 }
     ],
     "expressions": [
       { "expression": "本当", "kana": "ほんとう", "romaji": "hontou", "meaning": "truth, really",
@@ -482,8 +484,8 @@
     "kana": "なか",
     "romaji": "naka",
     "components": [
-      { "component": "口", "meaning": "Kangxi radical 30 — mouth, enclosure" },
-      { "component": "丨", "meaning": "Kangxi radical 2 — vertical stroke" }
+      { "component": "口", "meaning": "mouth, enclosure", "kangxi": 30 },
+      { "component": "丨", "meaning": "vertical stroke", "kangxi": 2 }
     ],
     "expressions": [
       { "expression": "途中", "kana": "とちゅう", "romaji": "tochuu", "meaning": "on the way, midway",
@@ -499,8 +501,8 @@
     "kana": "くに",
     "romaji": "kuni",
     "components": [
-      { "component": "囗", "meaning": "Kangxi radical 31 — enclosure" },
-      { "component": "玉", "meaning": "Kangxi radical 96 — jade" }
+      { "component": "囗", "meaning": "enclosure", "kangxi": 31 },
+      { "component": "玉", "meaning": "jade", "kangxi": 96 }
     ],
     "expressions": [
       { "expression": "外国", "kana": "がいこく", "romaji": "gaikoku", "meaning": "foreign country",
@@ -516,7 +518,7 @@
     "kana": "ひと",
     "romaji": "hito",
     "components": [
-      { "component": "人", "meaning": "Kangxi radical 9 — person" }
+      { "component": "人", "meaning": "person", "kangxi": 9 }
     ],
     "expressions": [
       { "expression": "大人", "kana": "おとな", "romaji": "otona", "meaning": "adult",
@@ -534,7 +536,7 @@
     "kana": "いち",
     "romaji": "ichi",
     "components": [
-      { "component": "一", "meaning": "Kangxi radical 1 — one" }
+      { "component": "一", "meaning": "one", "kangxi": 1 }
     ],
     "expressions": [
       { "expression": "一月", "kana": "いちがつ", "romaji": "ichigatsu", "meaning": "January",
@@ -552,7 +554,7 @@
     "kana": "に",
     "romaji": "ni",
     "components": [
-      { "component": "二", "meaning": "Kangxi radical 7 — two" }
+      { "component": "二", "meaning": "two", "kangxi": 7 }
     ],
     "expressions": [
       { "expression": "二月", "kana": "にがつ", "romaji": "nigatsu", "meaning": "February",
@@ -571,7 +573,7 @@
     "kana": "さん",
     "romaji": "san",
     "components": [
-      { "component": "一", "meaning": "Kangxi radical 1 — one" }
+      { "component": "一", "meaning": "one", "kangxi": 1 }
     ],
     "expressions": [
       { "expression": "三月", "kana": "さんがつ", "romaji": "sangatsu", "meaning": "March",
@@ -588,8 +590,8 @@
     "kana": "し",
     "romaji": "shi",
     "components": [
-      { "component": "囗", "meaning": "Kangxi radical 31 — enclosure" },
-      { "component": "儿", "meaning": "Kangxi radical 10 — legs" }
+      { "component": "囗", "meaning": "enclosure", "kangxi": 31 },
+      { "component": "儿", "meaning": "legs", "kangxi": 10 }
     ],
     "expressions": [
       { "expression": "四月", "kana": "しがつ", "romaji": "shigatsu", "meaning": "April",
@@ -608,7 +610,7 @@
     "kana": "ご",
     "romaji": "go",
     "components": [
-      { "component": "二", "meaning": "Kangxi radical 7 — two" },
+      { "component": "二", "meaning": "two", "kangxi": 7 },
       { "component": "五", "meaning": "(unofficial) tally crossing — 'five'" }
     ],
     "expressions": [
@@ -628,8 +630,8 @@
     "kana": "ろく",
     "romaji": "roku",
     "components": [
-      { "component": "亠", "meaning": "Kangxi radical 8 — lid" },
-      { "component": "八", "meaning": "Kangxi radical 12 — eight, divide" }
+      { "component": "亠", "meaning": "lid", "kangxi": 8 },
+      { "component": "八", "meaning": "eight, divide", "kangxi": 12 }
     ],
     "expressions": [
       { "expression": "六月", "kana": "ろくがつ", "romaji": "rokugatsu", "meaning": "June",
@@ -665,7 +667,7 @@
     "kana": "はち",
     "romaji": "hachi",
     "components": [
-      { "component": "八", "meaning": "Kangxi radical 12 — eight, divide" }
+      { "component": "八", "meaning": "eight, divide", "kangxi": 12 }
     ],
     "expressions": [
       { "expression": "八月", "kana": "はちがつ", "romaji": "hachigatsu", "meaning": "August",
