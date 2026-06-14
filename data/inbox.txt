@@ -1,0 +1,28 @@
+yama - mountain, 沢山 takusan (a lot)
+hi- day, kyou
+tsuki - moon, kongetsu
+mizu - water, suiyoubi
+ki - wood, mokuyoubi
+kane - money, okane, kinyoubi
+hi - fire, kayoubi
+tsuchi - earth, doyoubi
+kawa - river, kasen
+ike - pond
+inaka - rural area, ta rice field
+hyaku - hundred, yaoya greengrocer
+sen - thousand, chiba
+man - 10000, mannenhitsu fountain pen
+en - yen, enkatsu smooth
+gakkou - school, daikagu university
+umareru - to be born, sensei teacher
+saki - point, sensei teacher
+au - to meet, kaisha company
+shakai - society, kaisha company
+in - member, koumuin public employee
+mono - person, isha doctor
+i(gaku) - medical science, isha doctor
+hon - book, hontou truth
+naka - inside, tochuu on the way
+kuni - country, gaikoku foreign country
+hito - person, otona adult
+(also add entires for numbers one through nine)
