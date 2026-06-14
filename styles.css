@@ -418,12 +418,12 @@ body {
     padding-bottom: 1.1rem;
     margin-bottom: 0;
   }
-  /* When the navigator click-scrolls to a section, the scroll stops with
-     the section's top below the sticky hero (sticky hero height ≈ 9.5rem
-     on mobile + ~1rem of breathing room). Also gives every section
-     visible padding above its title so it's never flush with the hero. */
+  /* Visible breathing room above each section title. The actual
+     scroll-stop position is owned by `scroll-padding-top` on the
+     .detail-content container — kept in sync with the live hero
+     height by syncScrollPadding() in app.js, so resizing the viewport
+     doesn't leave sections landing under the sticky hero. */
   .detail-section {
-    scroll-margin-top: 10.5rem;
     padding-top: 1rem;
   }
   .detail-pane.is-open .detail-placeholder {

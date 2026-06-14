@@ -149,6 +149,9 @@ async function selectKanji(kanji) {
 
   renderDetail(entry, familyResolved);
   openDetail();
+  // After the new hero lays out, re-measure so a subsequent nav click
+  // (Components / Family) lands the section below it, not under it.
+  requestAnimationFrame(syncScrollPadding);
 }
 
 // ---------- Mobile detail overlay ----------
@@ -168,6 +171,31 @@ function openDetail() {
 function closeDetail() {
   detailPane.classList.remove("is-open");
   document.body.classList.remove("detail-open");
+}
+
+// scrollIntoView on a section needs to clear two possible sticky obstacles:
+// - On desktop, the page-level .site-header (sticky at viewport top)
+// - On mobile, the in-sheet .detail-header (sticky inside .detail-content)
+// Each scroll container gets a scroll-padding-top equal to its sticky
+// element's measured height + a small breathing-room buffer, so a nav
+// click puts the section's title visibly below the sticky strip rather
+// than under it. Recomputed on resize because both heights change with
+// viewport width (font sizes scale per breakpoint).
+function syncScrollPadding() {
+  const buffer = 16; // px of breathing room below the sticky element
+
+  // Desktop: the document scrolls; .site-header is the sticky obstacle.
+  const siteHeaderH = siteHeader?.getBoundingClientRect().height || 0;
+  document.documentElement.style.scrollPaddingTop = `${siteHeaderH + buffer}px`;
+
+  // Mobile: .detail-content scrolls; the in-sheet .detail-header is sticky.
+  const detailHeaderEl = detailContent.querySelector(".detail-header");
+  if (detailHeaderEl) {
+    const h = detailHeaderEl.getBoundingClientRect().height;
+    detailContent.style.scrollPaddingTop = `${h + buffer}px`;
+  } else {
+    detailContent.style.scrollPaddingTop = "";
+  }
 }
 
 // ---------- Mobile search toggle ----------
@@ -288,14 +316,29 @@ function renderDetail(entry, familyResolved) {
     </section>
   `;
 
-  // Wire up navigator clicks → smooth-scroll to the named section, and mark
-  // the clicked nav button as active. scrollIntoView finds the nearest
-  // scrollable ancestor — on mobile that's .detail-content; on desktop the
-  // page. Same call works for both.
+  // Wire up navigator clicks → smooth-scroll to the named section, parking
+  // its title just below the sticky-header strip (so it doesn't disappear
+  // under the hero). Native scrollIntoView ignored scroll-padding-top once
+  // a sticky child sat inside the scroll container, so this computes the
+  // landing scroll position manually: section.offsetTop − stickyHeight − a
+  // breathing-room buffer. Falls back to scrollIntoView on desktop where
+  // .detail-content isn't the scroll container.
   detailContent.querySelectorAll(".detail-nav-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const target = detailContent.querySelector(`[data-section="${btn.dataset.target}"]`);
-      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (target) {
+        const onMobile = detailPane.classList.contains("is-open") &&
+                          getComputedStyle(detailContent).overflowY === "auto";
+        if (onMobile) {
+          const containerRect = detailContent.getBoundingClientRect();
+          const targetRect = target.getBoundingClientRect();
+          const headerH = detailContent.querySelector(".detail-header")?.getBoundingClientRect().height || 0;
+          const offset = detailContent.scrollTop + (targetRect.top - containerRect.top) - headerH - 16;
+          detailContent.scrollTo({ top: Math.max(0, offset), behavior: "smooth" });
+        } else {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
       detailContent.querySelectorAll(".detail-nav-btn").forEach(b => b.classList.remove("is-active"));
       btn.classList.add("is-active");
     });
@@ -387,10 +430,15 @@ document.addEventListener("keydown", e => {
 
 // ---------- Init ----------
 
+// Resize listener: sticky-element heights track viewport width (different
+// font sizes per breakpoint), so the scroll-padding has to follow.
+window.addEventListener("resize", syncScrollPadding);
+
 (async () => {
   try {
     await seedIfNeeded();
     await runSearch("");
+    syncScrollPadding();
   } catch (err) {
     console.error(err);
     searchMeta.textContent = "Error loading data — see console.";
