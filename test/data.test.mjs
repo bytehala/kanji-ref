@@ -89,6 +89,20 @@ test("each expression has a non-empty breakdown and no stale okurigana", () => {
   });
 });
 
+// ---------- No redundant single-kanji expressions ----------
+// The hero already shows the kanji, its kana, and its meaning. Listing the
+// kanji again as its own "expression" (e.g. an 一 entry with an "一 / ichi /
+// one" expression) just repeats the hero. Compound expressions that USE
+// the kanji (一月, 一人) are fine.
+test("no expression repeats the entry's kanji on its own", () => {
+  for (const k of data) {
+    for (const e of k.expressions) {
+      assert.notEqual(e.expression, k.kanji,
+        `${k.kanji}: redundant single-kanji expression "${e.expression}" — the hero already shows this; only include compound expressions that USE the kanji`);
+    }
+  }
+});
+
 // ---------- Per-kanji ruby rule ----------
 // A breakdown segment with a `reading` represents one kanji's furigana,
 // and HTML <ruby> aligns one <rt> per base character — so multi-char text

@@ -40,6 +40,23 @@ preceded by `(unofficial)`:
 | `Kangxi radical 85 (sanzui) — water` | `Kangxi radical 85 (water variant) — sanzui, the three-stroke water radical on the left` |
 | `(unofficial) advancing foot (variant of 牛)` | `(unofficial) tip / advancing foot — variant of 牛, the upper part of 先` |
 
+## No redundant single-kanji expressions
+
+The hero already shows the kanji, its kana, and its meaning. Don't repeat
+it as its own "expression" — list **only compound expressions** that USE
+the kanji.
+
+- ❌ In the 一 entry: an `一 / いち / one` expression
+- ❌ In the 月 entry: a `月 / つき / moon` expression
+- ✅ In the 一 entry: 一月 (ichigatsu), 一人 (hitori)
+- ✅ In the 月 entry: 今月 (kongetsu), 月曜日 (getsuyoubi)
+
+This includes entries whose `expressions` would shrink to just one or zero
+items after the cull — that's fine, leave it.
+
+`npm test` enforces this: no `expressions[].expression` may equal the
+parent entry's `kanji`.
+
 ## Breakdown segments are per-kanji
 
 Each breakdown segment that has a `reading` must have **single-character** text.

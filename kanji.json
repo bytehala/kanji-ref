@@ -8,8 +8,6 @@
       { "component": "山", "meaning": "Kangxi radical 46 — mountain" }
     ],
     "expressions": [
-      { "expression": "山", "kana": "やま", "romaji": "yama", "meaning": "mountain",
-        "breakdown": [{ "text": "山", "reading": "やま" }] },
       { "expression": "沢山", "kana": "たくさん", "romaji": "takusan", "meaning": "a lot, many",
         "breakdown": [{ "text": "沢", "reading": "たく" }, { "text": "山", "reading": "さん" }] },
       { "expression": "火山", "kana": "かざん", "romaji": "kazan", "meaning": "volcano",
@@ -55,8 +53,6 @@
       { "component": "月", "meaning": "Kangxi radical 74 — moon, month" }
     ],
     "expressions": [
-      { "expression": "月", "kana": "つき", "romaji": "tsuki", "meaning": "moon, month",
-        "breakdown": [{ "text": "月", "reading": "つき" }] },
       { "expression": "今月", "kana": "こんげつ", "romaji": "kongetsu", "meaning": "this month",
         "breakdown": [{ "text": "今", "reading": "こん" }, { "text": "月", "reading": "げつ" }] },
       { "expression": "月曜日", "kana": "げつようび", "romaji": "getsuyoubi", "meaning": "Monday",
@@ -80,8 +76,6 @@
       { "component": "水", "meaning": "Kangxi radical 85 — water" }
     ],
     "expressions": [
-      { "expression": "水", "kana": "みず", "romaji": "mizu", "meaning": "water",
-        "breakdown": [{ "text": "水", "reading": "みず" }] },
       { "expression": "水曜日", "kana": "すいようび", "romaji": "suiyoubi", "meaning": "Wednesday",
         "breakdown": [{ "text": "水", "reading": "すい" }, { "text": "曜", "reading": "よう" }, { "text": "日", "reading": "び" }] },
       { "expression": "水道", "kana": "すいどう", "romaji": "suidou", "meaning": "water supply, tap",
@@ -107,8 +101,6 @@
       { "component": "木", "meaning": "Kangxi radical 75 — tree" }
     ],
     "expressions": [
-      { "expression": "木", "kana": "き", "romaji": "ki", "meaning": "tree, wood",
-        "breakdown": [{ "text": "木", "reading": "き" }] },
       { "expression": "木曜日", "kana": "もくようび", "romaji": "mokuyoubi", "meaning": "Thursday",
         "breakdown": [{ "text": "木", "reading": "もく" }, { "text": "曜", "reading": "よう" }, { "text": "日", "reading": "び" }] }
     ],
@@ -156,8 +148,6 @@
       { "component": "火", "meaning": "Kangxi radical 86 — fire" }
     ],
     "expressions": [
-      { "expression": "火", "kana": "ひ", "romaji": "hi", "meaning": "fire",
-        "breakdown": [{ "text": "火", "reading": "ひ" }] },
       { "expression": "火曜日", "kana": "かようび", "romaji": "kayoubi", "meaning": "Tuesday",
         "breakdown": [{ "text": "火", "reading": "か" }, { "text": "曜", "reading": "よう" }, { "text": "日", "reading": "び" }] },
       { "expression": "火事", "kana": "かじ", "romaji": "kaji", "meaning": "fire (incident)",
@@ -181,8 +171,6 @@
       { "component": "土", "meaning": "Kangxi radical 32 — earth, soil" }
     ],
     "expressions": [
-      { "expression": "土", "kana": "つち", "romaji": "tsuchi", "meaning": "earth, soil",
-        "breakdown": [{ "text": "土", "reading": "つち" }] },
       { "expression": "土曜日", "kana": "どようび", "romaji": "doyoubi", "meaning": "Saturday",
         "breakdown": [{ "text": "土", "reading": "ど" }, { "text": "曜", "reading": "よう" }, { "text": "日", "reading": "び" }] },
       { "expression": "土地", "kana": "とち", "romaji": "tochi", "meaning": "land, plot",
@@ -206,8 +194,6 @@
       { "component": "川", "meaning": "Kangxi radical 47 — river" }
     ],
     "expressions": [
-      { "expression": "川", "kana": "かわ", "romaji": "kawa", "meaning": "river",
-        "breakdown": [{ "text": "川", "reading": "かわ" }] },
       { "expression": "河川", "kana": "かせん", "romaji": "kasen", "meaning": "rivers, waterways",
         "breakdown": [{ "text": "河", "reading": "か" }, { "text": "川", "reading": "せん" }] }
     ],
@@ -227,8 +213,6 @@
       { "component": "也", "meaning": "(unofficial) also, snake (phonetic, gives ち/いけ)" }
     ],
     "expressions": [
-      { "expression": "池", "kana": "いけ", "romaji": "ike", "meaning": "pond",
-        "breakdown": [{ "text": "池", "reading": "いけ" }] },
       { "expression": "電池", "kana": "でんち", "romaji": "denchi", "meaning": "battery",
         "breakdown": [{ "text": "電", "reading": "でん" }, { "text": "池", "reading": "ち" }] }
     ],
@@ -246,8 +230,6 @@
       { "component": "田", "meaning": "Kangxi radical 102 — rice field" }
     ],
     "expressions": [
-      { "expression": "田", "kana": "た", "romaji": "ta", "meaning": "rice field",
-        "breakdown": [{ "text": "田", "reading": "た" }] },
       { "expression": "田舎", "kana": "いなか", "romaji": "inaka", "meaning": "rural area, countryside",
         "breakdown": [{ "text": "田", "reading": "いな" }, { "text": "舎", "reading": "か" }] },
       { "expression": "水田", "kana": "すいでん", "romaji": "suiden", "meaning": "paddy field",
@@ -265,8 +247,6 @@
       { "component": "白", "meaning": "Kangxi radical 106 — white" }
     ],
     "expressions": [
-      { "expression": "百", "kana": "ひゃく", "romaji": "hyaku", "meaning": "hundred",
-        "breakdown": [{ "text": "百", "reading": "ひゃく" }] },
       { "expression": "三百", "kana": "さんびゃく", "romaji": "sanbyaku", "meaning": "three hundred",
         "breakdown": [{ "text": "三", "reading": "さん" }, { "text": "百", "reading": "びゃく" }] },
       { "expression": "八百屋", "kana": "やおや", "romaji": "yaoya", "meaning": "greengrocer",
@@ -287,8 +267,6 @@
       { "component": "十", "meaning": "Kangxi radical 24 — ten" }
     ],
     "expressions": [
-      { "expression": "千", "kana": "せん", "romaji": "sen", "meaning": "thousand",
-        "breakdown": [{ "text": "千", "reading": "せん" }] },
       { "expression": "千葉", "kana": "ちば", "romaji": "chiba", "meaning": "Chiba (place name)",
         "breakdown": [{ "text": "千", "reading": "ち" }, { "text": "葉", "reading": "ば" }] }
     ],
@@ -326,8 +304,6 @@
       { "component": "冂", "meaning": "Kangxi radical 13 — open box" }
     ],
     "expressions": [
-      { "expression": "円", "kana": "えん", "romaji": "en", "meaning": "yen",
-        "breakdown": [{ "text": "円", "reading": "えん" }] },
       { "expression": "円滑", "kana": "えんかつ", "romaji": "enkatsu", "meaning": "smooth, harmonious",
         "breakdown": [{ "text": "円", "reading": "えん" }, { "text": "滑", "reading": "かつ" }] }
     ],
@@ -383,8 +359,6 @@
       { "component": "儿", "meaning": "Kangxi radical 10 — legs, walking person" }
     ],
     "expressions": [
-      { "expression": "先", "kana": "さき", "romaji": "saki", "meaning": "ahead, tip",
-        "breakdown": [{ "text": "先", "reading": "さき" }] },
       { "expression": "先生", "kana": "せんせい", "romaji": "sensei", "meaning": "teacher",
         "breakdown": [{ "text": "先", "reading": "せん" }, { "text": "生", "reading": "せい" }] },
       { "expression": "先週", "kana": "せんしゅう", "romaji": "senshuu", "meaning": "last week",
@@ -495,8 +469,6 @@
       { "component": "一", "meaning": "Kangxi radical 1 — one" }
     ],
     "expressions": [
-      { "expression": "本", "kana": "ほん", "romaji": "hon", "meaning": "book",
-        "breakdown": [{ "text": "本", "reading": "ほん" }] },
       { "expression": "本当", "kana": "ほんとう", "romaji": "hontou", "meaning": "truth, really",
         "breakdown": [{ "text": "本", "reading": "ほん" }, { "text": "当", "reading": "とう" }] },
       { "expression": "日本", "kana": "にほん", "romaji": "nihon", "meaning": "Japan",
@@ -514,8 +486,6 @@
       { "component": "丨", "meaning": "Kangxi radical 2 — vertical stroke" }
     ],
     "expressions": [
-      { "expression": "中", "kana": "なか", "romaji": "naka", "meaning": "inside, middle",
-        "breakdown": [{ "text": "中", "reading": "なか" }] },
       { "expression": "途中", "kana": "とちゅう", "romaji": "tochuu", "meaning": "on the way, midway",
         "breakdown": [{ "text": "途", "reading": "と" }, { "text": "中", "reading": "ちゅう" }] },
       { "expression": "中国", "kana": "ちゅうごく", "romaji": "chuugoku", "meaning": "China",
@@ -533,8 +503,6 @@
       { "component": "玉", "meaning": "Kangxi radical 96 — jade" }
     ],
     "expressions": [
-      { "expression": "国", "kana": "くに", "romaji": "kuni", "meaning": "country",
-        "breakdown": [{ "text": "国", "reading": "くに" }] },
       { "expression": "外国", "kana": "がいこく", "romaji": "gaikoku", "meaning": "foreign country",
         "breakdown": [{ "text": "外", "reading": "がい" }, { "text": "国", "reading": "こく" }] },
       { "expression": "中国", "kana": "ちゅうごく", "romaji": "chuugoku", "meaning": "China",
@@ -551,8 +519,6 @@
       { "component": "人", "meaning": "Kangxi radical 9 — person" }
     ],
     "expressions": [
-      { "expression": "人", "kana": "ひと", "romaji": "hito", "meaning": "person",
-        "breakdown": [{ "text": "人", "reading": "ひと" }] },
       { "expression": "大人", "kana": "おとな", "romaji": "otona", "meaning": "adult",
         "breakdown": [{ "text": "大", "reading": "おと" }, { "text": "人", "reading": "な" }] },
       { "expression": "日本人", "kana": "にほんじん", "romaji": "nihonjin", "meaning": "Japanese person",
@@ -571,8 +537,6 @@
       { "component": "一", "meaning": "Kangxi radical 1 — one" }
     ],
     "expressions": [
-      { "expression": "一", "kana": "いち", "romaji": "ichi", "meaning": "one",
-        "breakdown": [{ "text": "一", "reading": "いち" }] },
       { "expression": "一月", "kana": "いちがつ", "romaji": "ichigatsu", "meaning": "January",
         "breakdown": [{ "text": "一", "reading": "いち" }, { "text": "月", "reading": "がつ" }] },
       { "expression": "一人", "kana": "ひとり", "romaji": "hitori", "meaning": "one person, alone",
@@ -591,8 +555,6 @@
       { "component": "二", "meaning": "Kangxi radical 7 — two" }
     ],
     "expressions": [
-      { "expression": "二", "kana": "に", "romaji": "ni", "meaning": "two",
-        "breakdown": [{ "text": "二", "reading": "に" }] },
       { "expression": "二月", "kana": "にがつ", "romaji": "nigatsu", "meaning": "February",
         "breakdown": [{ "text": "二", "reading": "に" }, { "text": "月", "reading": "がつ" }] },
       { "expression": "二人", "kana": "ふたり", "romaji": "futari", "meaning": "two people",
@@ -612,8 +574,6 @@
       { "component": "一", "meaning": "Kangxi radical 1 — one" }
     ],
     "expressions": [
-      { "expression": "三", "kana": "さん", "romaji": "san", "meaning": "three",
-        "breakdown": [{ "text": "三", "reading": "さん" }] },
       { "expression": "三月", "kana": "さんがつ", "romaji": "sangatsu", "meaning": "March",
         "breakdown": [{ "text": "三", "reading": "さん" }, { "text": "月", "reading": "がつ" }] }
     ],
@@ -632,8 +592,6 @@
       { "component": "儿", "meaning": "Kangxi radical 10 — legs" }
     ],
     "expressions": [
-      { "expression": "四", "kana": "し", "romaji": "shi", "meaning": "four",
-        "breakdown": [{ "text": "四", "reading": "し" }] },
       { "expression": "四月", "kana": "しがつ", "romaji": "shigatsu", "meaning": "April",
         "breakdown": [{ "text": "四", "reading": "し" }, { "text": "月", "reading": "がつ" }] },
       { "expression": "四つ", "kana": "よっつ", "romaji": "yottsu", "meaning": "four (objects)",
@@ -654,8 +612,6 @@
       { "component": "五", "meaning": "(unofficial) tally crossing — 'five'" }
     ],
     "expressions": [
-      { "expression": "五", "kana": "ご", "romaji": "go", "meaning": "five",
-        "breakdown": [{ "text": "五", "reading": "ご" }] },
       { "expression": "五月", "kana": "ごがつ", "romaji": "gogatsu", "meaning": "May",
         "breakdown": [{ "text": "五", "reading": "ご" }, { "text": "月", "reading": "がつ" }] },
       { "expression": "五つ", "kana": "いつつ", "romaji": "itsutsu", "meaning": "five (objects)",
@@ -676,8 +632,6 @@
       { "component": "八", "meaning": "Kangxi radical 12 — eight, divide" }
     ],
     "expressions": [
-      { "expression": "六", "kana": "ろく", "romaji": "roku", "meaning": "six",
-        "breakdown": [{ "text": "六", "reading": "ろく" }] },
       { "expression": "六月", "kana": "ろくがつ", "romaji": "rokugatsu", "meaning": "June",
         "breakdown": [{ "text": "六", "reading": "ろく" }, { "text": "月", "reading": "がつ" }] }
     ],
@@ -695,8 +649,6 @@
       { "component": "七", "meaning": "(unofficial) cutting motion — historically 'cut'" }
     ],
     "expressions": [
-      { "expression": "七", "kana": "しち", "romaji": "shichi", "meaning": "seven",
-        "breakdown": [{ "text": "七", "reading": "しち" }] },
       { "expression": "七月", "kana": "しちがつ", "romaji": "shichigatsu", "meaning": "July",
         "breakdown": [{ "text": "七", "reading": "しち" }, { "text": "月", "reading": "がつ" }] },
       { "expression": "七つ", "kana": "ななつ", "romaji": "nanatsu", "meaning": "seven (objects)",
@@ -716,8 +668,6 @@
       { "component": "八", "meaning": "Kangxi radical 12 — eight, divide" }
     ],
     "expressions": [
-      { "expression": "八", "kana": "はち", "romaji": "hachi", "meaning": "eight",
-        "breakdown": [{ "text": "八", "reading": "はち" }] },
       { "expression": "八月", "kana": "はちがつ", "romaji": "hachigatsu", "meaning": "August",
         "breakdown": [{ "text": "八", "reading": "はち" }, { "text": "月", "reading": "がつ" }] },
       { "expression": "八百屋", "kana": "やおや", "romaji": "yaoya", "meaning": "greengrocer",
@@ -737,8 +687,6 @@
       { "component": "九", "meaning": "(unofficial) elbow/forearm at its limit — 'almost ten'" }
     ],
     "expressions": [
-      { "expression": "九", "kana": "きゅう", "romaji": "kyuu", "meaning": "nine",
-        "breakdown": [{ "text": "九", "reading": "きゅう" }] },
       { "expression": "九月", "kana": "くがつ", "romaji": "kugatsu", "meaning": "September",
         "breakdown": [{ "text": "九", "reading": "く" }, { "text": "月", "reading": "がつ" }] },
       { "expression": "九つ", "kana": "ここのつ", "romaji": "kokonotsu", "meaning": "nine (objects)",
