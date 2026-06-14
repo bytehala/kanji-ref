@@ -359,6 +359,11 @@ body {
   .detail-pane.is-open {
     display: block;
     position: fixed;
+    /* `top: 3.5rem` sits just under the collapsed site-header (see the
+       `body.detail-open .site-header` rule below). Combined with
+       `bottom: 0`, the sheet fills the viewport from the collapsed
+       header strip down to the bottom — ~92vh of content area. */
+    top: 3.5rem;
     left: 0;
     right: 0;
     bottom: 0;
@@ -369,14 +374,53 @@ body {
     animation: slideUp 0.28s ease-out;
   }
   .detail-pane.is-open .detail-content {
-    max-height: 92vh;
+    height: 100%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    /* Generous bottom padding so the navigator can scroll the family
-       section (or any other) up to the top, even on entries whose
-       natural content height is shorter than the sheet. */
-    padding: 0.85rem 1rem 80vh;
+    /* No top padding — the sticky hero owns the top of the visible area.
+       Generous bottom padding so the navigator can scroll any section
+       (even Family) up to just-below-the-hero, even when an entry's
+       natural content is shorter than the sheet. */
+    padding: 0 1rem 80vh;
     border-radius: inherit;
+  }
+  /* While the sheet is open, shrink the site-header to a thin strip so
+     the sheet can start near the very top of the viewport. The magnifier
+     stays tappable (still at the right edge); tapping it dismisses the
+     sheet and opens the search field. */
+  body.detail-open .site-header {
+    padding: 0.4rem 1rem 0.35rem;
+    border-bottom: none;
+  }
+  body.detail-open .title-en,
+  body.detail-open .search-meta {
+    display: none;
+  }
+  body.detail-open .title-jp {
+    font-size: 1.3rem;
+  }
+  body.detail-open .search-toggle {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+  /* Hero pins to the top of the scroll container; sections slide under it.
+     Opaque background hides any content scrolling behind it. */
+  .detail-pane.is-open .detail-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--paper);
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+    margin-bottom: 0;
+  }
+  /* When the navigator click-scrolls to a section, the scroll stops with
+     the section's top below the sticky hero (sticky hero height ≈ 9.5rem
+     on mobile + ~1rem of breathing room). Also gives every section
+     visible padding above its title so it's never flush with the hero. */
+  .detail-section {
+    scroll-margin-top: 10.5rem;
+    padding-top: 1rem;
   }
   .detail-pane.is-open .detail-placeholder {
     display: none;
@@ -386,6 +430,7 @@ body {
     position: absolute;
     top: 0.75rem;
     right: 0.75rem;
+    z-index: 6;
   }
   /* Show the scrim and lift the header above both scrim and sheet */
   body.detail-open .detail-backdrop {
